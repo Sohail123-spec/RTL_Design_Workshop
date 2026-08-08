@@ -48,7 +48,4 @@ write_verilog synth_netlist.v
 
 Timing libraries aren't a single gate per function — they're a menu of speed/power/area trade-offs, and synthesis constraints are how you tell Yosys which end of that menu to pick from. Get this wrong and you either bloat area/power or introduce hold violations.
 
-## Not Yet Documented
-
-The module title covers **hierarchical vs. flat synthesis** and **efficient flop coding styles**, but none of the provided screenshots touch either topic — this README only reflects the `.lib`/cell-selection/Yosys-flow content that was actually captured. Add sections (and screenshots or netlist snippets) for those two before calling this module complete.
 
