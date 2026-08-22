@@ -73,7 +73,7 @@ endmodule
 
 | Waveform | Synthesized Diagram |
 |---|---|
-| ![Asynchronous set waveform](asyncsetwave-1.png) | ![Asynchronous set diagram](asyncsetdiag.png) |
+| ![Asynchronous set waveform](images/asyncsetwave-1.png) | ![Asynchronous set diagram](images/asyncsetdiag.png) |
 
 The synthesized diagram shows something the RTL doesn't: the SKY130 flop cell used here (`sky130_fd_sc_hd__dfstp_2`) has an **active-low** `SET_B` pin, not an active-high set. Since the RTL's `async_set` is active-high, Yosys inserts a `$_NOT_` gate between the input and the cell's `SET_B` pin to convert polarity. The RTL never asks for an inverter — it falls out of matching the behavior to what the library cell actually provides.
 
@@ -101,7 +101,7 @@ endmodule
 
 | Waveform | Synthesized Diagram |
 |---|---|
-| *(missing — see note below)* | ![Asynchronous reset diagram](asyncresdiag.png) |
+| *(missing — see note below)* | ![Asynchronous reset diagram](images/asyncresdiag.png) |
 
 Same pattern as `dff_async_set`: the mapped cell (`sky130_fd_sc_hd__dfrtp_1`) takes an active-low `RESET_B`, so Yosys inserts a `sky130_fd_sc_hd__clkinv_1` inverter ahead of it to flip the RTL's active-high `async_reset`.
 
@@ -146,7 +146,7 @@ endmodule
 
 Multiplying by 2 is a left shift by 1 bit — no arithmetic hardware is needed. Synthesis reduces this to pure wiring: each input bit connects directly to the output bit one position higher, and the LSB of `y` is tied to 0.
 
-![mul2 synthesized diagram](mul2.png)
+![mul2 synthesized diagram](images/mul2.png)
 
 ### mult8 — Multiply by 8
 
@@ -185,7 +185,7 @@ endmodule
 
 `net1 = a & b`, then `y = net1 | c`, giving the overall function `y = (a & b) | c`.
 
-![Hierarchical design diagram](multimodules.png)
+![Hierarchical design diagram](images/multimodules.png)
 
 ## 6. Hierarchical Synthesis
 

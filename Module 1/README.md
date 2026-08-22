@@ -24,7 +24,7 @@ This module covers the baseline RTL flow used throughout the rest of the worksho
 Verilog RTL Design → Testbench → Icarus Verilog → Simulation → VCD File → GTKWave → Waveform Analysis → Yosys → Synthesis
 ```
 
-![RTL simulation flow](image.png)
+![RTL simulation flow](images/image.png)
 
 ## 2. Design and Testbench
 
@@ -32,7 +32,7 @@ The **design** is the RTL code describing the required hardware; the **testbench
 
 | Design | Testbench |
 |---|---|
-| ![Design](Design.png) | ![Testbench](Test%20bench.png) |
+| ![Design](images/Design.png) | ![Testbench](images/Test%20bench.png) |
 
 ## 3. 2:1 Multiplexer — Specification
 
@@ -62,7 +62,7 @@ end
 endmodule
 ```
 
-![good_mux source](muxcode.png)
+![good_mux source](images/muxcode.png)
 
 ## 5. Simulation with Icarus Verilog
 
@@ -74,13 +74,13 @@ gtkwave tb_good_mux.vcd
 
 `iverilog` compiles the design and testbench into a simulation executable; running it produces a `.vcd` (Value Change Dump) file with every signal transition.
 
-![Icarus Verilog simulation flow](Iverilog%20based%20simulation%20flow.png)
+![Icarus Verilog simulation flow](images/Iverilog%20based%20simulation%20flow.png)
 
 ## 6. Waveform Analysis with GTKWave
 
 `y` tracks `i1` when `sel` is high and `i0` when `sel` is low across the simulated window — confirming the mux behaves correctly at the RTL level, before any synthesis is involved.
 
-![GTKWave waveform](goodmuxwave.png)
+![GTKWave waveform](images/goodmuxwave.png)
 
 ## 7. Introduction to Yosys
 
@@ -95,8 +95,8 @@ read_verilog good_mux.v
 hierarchy -top good_mux
 ```
 
-![Yosys setup](yosys%20setup.png)
-![Yosys synthesizer flow](Synthesiser%20yosys.png)
+![Yosys setup](images/yosys%20setup.png)
+![Yosys synthesizer flow](images/Synthesiser%20yosys.png)
 
 ## 8. Standard-Cell Libraries
 
@@ -106,7 +106,7 @@ A `.lib` (Liberty) file is the set of standard cells (AND/OR/NOT/NAND/NOR gates,
 RTL Design → RTL Synthesis → Logic Representation → Technology Mapping → Standard Cell Library → Gate-Level Netlist
 ```
 
-![Library-based synthesis](What%20is%20lib.png)
+![Library-based synthesis](images/What%20is%20lib.png)
 
 ## 9. Simulation vs. Synthesis
 
