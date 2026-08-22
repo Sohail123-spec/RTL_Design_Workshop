@@ -53,5 +53,5 @@ Every module folder follows the same shape: a `README.md` walking through each d
 
 ## Author
 
-**Sohail** — B.Tech ECE, Anurag University
+**Md Sohail Ahmed** — B.Tech ECE, Anurag University
 [GitHub](https://github.com/Sohail123-spec) · [Portfolio](https://sohail123-spec.github.io/sohail-portfolio) · [LinkedIn](https://linkedin.com/in/contactmdsohailahmed)
