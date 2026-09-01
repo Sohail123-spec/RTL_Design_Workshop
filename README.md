@@ -15,6 +15,7 @@ This repository documents the practical work completed across five modules. Each
 | [Module 3](./Module%203) | Combinational and Sequential RTL Optimizations | ✅ Completed |
 | [Module 4](./Module%204) | Gate-Level Simulation, Blocking vs. Non-Blocking Assignments, and Synthesis–Simulation Mismatch | ✅ Completed |
 | [Module 5](./Module%205) | `if`/`case` Coverage, Latch Avoidance, and `for`/`generate` Constructs | ✅ Completed |
+| [Lab Work](./lab%20work%20RLC_GLS_DAC) | RTL-to-Gate-Level Flow, MUX Design, GLS, Standard-Cell Analysis, and VSD BabySoC | ✅ Completed |
 
 ---
 
@@ -59,6 +60,13 @@ RTL_Design_Workshop/
     │   ├── *.v
     │   └── ...
     └── images/
+
+└── lab work RLC_GLS_DAC/
+    ├── README.md
+    └── screenshots/
+        ├── *.jpeg
+        ├── *.jpg
+        └── *.png
 ```
 
 ---
@@ -138,6 +146,104 @@ Demonstrates how incomplete conditional descriptions can infer unintended hardwa
 - `for` loops
 - `generate` loops
 - Repeated hardware structures
+
+---
+
+### Lab Work — VLSI Design and Synthesis
+
+The lab work documents the practical application of RTL-to-gate-level VLSI design concepts, including Verilog RTL design, simulation, synthesis, technology mapping, Gate-Level Simulation (GLS), standard-cell library analysis, and VSD BabySoC synthesis and verification.
+
+**Key areas:**
+- Complete RTL-to-gate-level VLSI design flow
+- Verilog RTL coding and testbench development
+- MUX RTL design
+- Good MUX functional simulation
+- Good MUX synthesis using Yosys
+- SKY130 standard-cell technology mapping
+- Post-synthesis / Gate-Level Simulation
+- Good MUX vs. Bad MUX comparison
+- Gate-level netlist inspection
+- Standard-cell leakage-power information
+- VSD BabySoC design hierarchy
+- RVMYTH module inspection
+- BabySoC testbench analysis
+- BabySoC synthesis and synthesis statistics
+- BabySoC netlist inspection
+- Pre-synthesis and post-synthesis comparison
+
+**Lab Work Structure:**
+
+```text
+lab work RLC_GLS_DAC/
+│
+├── README.md
+│
+└── screenshots/
+    ├── final Practical Flow.jpeg
+    ├── File_structures.jpeg
+    ├── Design hierarchy.jpeg
+    ├── mux_code.jpeg
+    ├── good_mux_simulation.jpeg
+    ├── Good_mux.jpeg
+    ├── Good_mux technology mapped .jpeg
+    ├── post_synthesis.jpeg
+    ├── comparison of goodmux & badmux.jpeg
+    ├── GLS pre_synth.jpeg
+    ├── checking the gate.jpeg
+    ├── Lekeage power information.jpeg
+    ├── vsdbaby_soc.jpeg
+    ├── rv_myth.jpeg
+    ├── test_bench file.jpeg
+    ├── Baby_soc synthesized design.jpeg
+    ├── BabySoC Synthesis Statistics.jpeg
+    ├── Baby_Soc_simulation _soc_netlist.jpeg
+    ├── Baby_Soc_simulation _soc2_netlist.jpeg
+    └── Comparion post_pre.jpeg
+```
+
+#### Lab Work Flow
+
+```text
+RTL Design
+    ↓
+Verilog Coding
+    ↓
+Testbench
+    ↓
+RTL / Functional Simulation
+    ↓
+Icarus Verilog
+    ↓
+GTKWave
+    ↓
+Yosys Synthesis
+    ↓
+Logic Optimization
+    ↓
+Technology Mapping
+    ↓
+Gate-Level Netlist
+    ↓
+Gate-Level Simulation
+    ↓
+GTKWave Verification
+```
+
+#### MUX Design and Verification
+
+The MUX lab work covers RTL implementation, functional simulation, Yosys synthesis, technology mapping, post-synthesis verification, and comparison of Good and Bad MUX coding styles.
+
+#### Gate-Level Simulation
+
+The GLS work demonstrates the flow from synthesized RTL to a gate-level netlist using standard-cell models, followed by simulation and waveform verification.
+
+#### Standard-Cell Library Analysis
+
+The lab includes inspection of leakage-power information available from the standard-cell library.
+
+#### VSD BabySoC
+
+The BabySoC work extends the synthesis flow to a larger SoC design and includes RVMYTH inspection, testbench analysis, synthesis, synthesis statistics, netlist inspection, and pre-synthesis/post-synthesis comparison.
 
 ---
 
