@@ -16,6 +16,7 @@ This repository documents the practical work completed across five modules. Each
 | [Module 4](./Module%204) | Gate-Level Simulation, Blocking vs. Non-Blocking Assignments, and Synthesis–Simulation Mismatch | ✅ Completed |
 | [Module 5](./Module%205) | `if`/`case` Coverage, Latch Avoidance, and `for`/`generate` Constructs | ✅ Completed |
 | [Lab Work](./lab%20work%20RLC_GLS_DAC) | RTL-to-Gate-Level Flow, MUX Design, GLS, Standard-Cell Analysis, and VSD BabySoC | ✅ Completed |
+| [Physical Design](./PD) | Open-Source EDA, OpenLane, SKY130 PDK, Floorplanning, Library Cells, and Timing Characterization | ✅ Completed |
 
 ---
 
