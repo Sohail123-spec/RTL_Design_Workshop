@@ -61,12 +61,21 @@ RTL_Design_Workshop/
     │   └── ...
     └── images/
 
-└── lab work RLC_GLS_DAC/
+├── lab work RLC_GLS_DAC/
+│   ├── README.md
+│   └── screenshots/
+│       ├── *.jpeg
+│       ├── *.jpg
+│       └── *.png
+│
+└── PD/
     ├── README.md
-    └── screenshots/
-        ├── *.jpeg
-        ├── *.jpg
-        └── *.png
+    ├── Module 1/
+    │   ├── README.md
+    │   └── images/
+    └── Module 2/
+        ├── README.md
+        └── images/
 ```
 
 ---
@@ -244,6 +253,79 @@ The lab includes inspection of leakage-power information available from the stan
 #### VSD BabySoC
 
 The BabySoC work extends the synthesis flow to a larger SoC design and includes RVMYTH inspection, testbench analysis, synthesis, synthesis statistics, netlist inspection, and pre-synthesis/post-synthesis comparison.
+
+
+---
+
+### Physical Design (PD) — Open-Source EDA, OpenLane and Sky130
+
+The **Physical Design (PD)** work documents the practical introduction to open-source EDA, OpenLane, the Sky130 PDK, chip floorplanning, library-cell concepts, and timing characterization.
+
+This work is organized separately from the five RTL modules and the RTL lab work because it focuses on the **physical-design side of the VLSI flow**.
+
+**Key areas:**
+- Inception of open-source EDA
+- OpenLane and Sky130 PDK
+- How to talk to computers
+- SoC design and OpenLane
+- Familiarization with open-source EDA tools
+- Chip floorplanning considerations
+- Utilization factor and aspect ratio
+- Cell design and characterization flow
+- General timing characterization parameters
+- Floorplan visualization
+- Metal-layer inspection
+- Standard-cell placement
+
+#### Physical Design Structure
+
+```text
+PD/
+├── README.md
+├── Module 1/
+│   ├── README.md
+│   └── images/
+│       ├── Openlane.png
+│       ├── Synthesis_netlist.png
+│       ├── Technology_Specific.png
+│       ├── Tools_Specfic.png
+│       ├── chip_area.png
+│       ├── clock ratio&percentage.png
+│       └── overall_tech&tools.png
+│
+└── Module 2/
+    ├── README.md
+    └── images/
+        ├── Design_name.png
+        ├── floorplan.png
+        ├── magic_flooorplan_layout.png
+        ├── metal2.png
+        ├── metal3.png
+        └── placement_standard_cell.png
+```
+
+#### Module 1 — Inception of Open-Source EDA, OpenLane and Sky130 PDK
+
+Topics covered:
+
+- How to Talk to Computers
+- SoC Design and OpenLane
+- Getting Familiar with Open-Source EDA Tools
+
+[Open Physical Design Module 1 →](./PD/Module%201/README.md)
+
+#### Module 2 — Good Floorplan vs Bad Floorplan and Introduction to Library Cells
+
+Topics covered:
+
+1. Chip Floorplanning Considerations
+2. Utilization Factor and Aspect Ratio
+3. Cell Design and Characterization Flow
+4. General Timing Characterization Parameters
+
+[Open Physical Design Module 2 →](./PD/Module%202/README.md)
+
+[Open Physical Design Documentation →](./PD/README.md)
 
 ---
 
