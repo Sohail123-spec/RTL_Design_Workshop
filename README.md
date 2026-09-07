@@ -15,7 +15,7 @@ This repository documents the practical work completed across five modules. Each
 | [Module 3](./Module%203) | Combinational and Sequential RTL Optimizations | ✅ Completed |
 | [Module 4](./Module%204) | Gate-Level Simulation, Blocking vs. Non-Blocking Assignments, and Synthesis–Simulation Mismatch | ✅ Completed |
 | [Module 5](./Module%205) | `if`/`case` Coverage, Latch Avoidance, and `for`/`generate` Constructs | ✅ Completed |
-| [Lab Work](./lab%20work%20RLC_GLS_DAC) | RTL-to-Gate-Level Flow, MUX Design, GLS, Standard-Cell Analysis, and VSD BabySoC | ✅ Completed |
+| [LabWork_RTL&GLS & Test](./LabWork_RTL%26GLS%20%26%20Test) | RTL-to-Gate-Level Flow, MUX Design, GLS, Standard-Cell Analysis, and VSD BabySoC | ✅ Completed |
 | [Physical Design](./PD) | Open-Source EDA, OpenLane, SKY130 PDK, Floorplanning, Library Cells, and Timing Characterization | ✅ Completed |
 
 ---
@@ -62,7 +62,7 @@ RTL_Design_Workshop/
     │   └── ...
     └── images/
 
-├── lab work RLC_GLS_DAC/
+├── LabWork_RTL&GLS & Test/
 │   ├── README.md
 │   └── screenshots/
 │       ├── *.jpeg
@@ -184,7 +184,7 @@ The lab work documents the practical application of RTL-to-gate-level VLSI desig
 **Lab Work Structure:**
 
 ```text
-lab work RLC_GLS_DAC/
+LabWork_RTL&GLS & Test/
 │
 ├── README.md
 │
