@@ -16,7 +16,7 @@ This repository documents the practical work completed across five modules. Each
 | [Module 4](./Module%204) | Gate-Level Simulation, Blocking vs. Non-Blocking Assignments, and Synthesis–Simulation Mismatch | ✅ Completed |
 | [Module 5](./Module%205) | `if`/`case` Coverage, Latch Avoidance, and `for`/`generate` Constructs | ✅ Completed |
 | [LabWork_RTL&GLS & Test](./LabWork_RTL%26GLS%20%26%20Test) | RTL-to-Gate-Level Flow, MUX Design, GLS, Standard-Cell Analysis, and VSD BabySoC | ✅ Completed |
-| [Physical Design](./PD) | Open-Source EDA, OpenLane, SKY130 PDK, Floorplanning, Library Cells, and Timing Characterization | ✅ Completed |
+| [Physical Design](./Physical_Design) | Open-Source EDA, OpenLane, SKY130 PDK, Floorplanning, Library Cells, and Timing Characterization | ✅ Completed |
 
 ---
 
@@ -313,7 +313,7 @@ Topics covered:
 - SoC Design and OpenLane
 - Getting Familiar with Open-Source EDA Tools
 
-[Open Physical Design Module 1 →](./PD/Module%201/README.md)
+[Open Physical Design Module 1 →](./Physical_Design/Module%201/README.md)
 
 #### Module 2 — Good Floorplan vs Bad Floorplan and Introduction to Library Cells
 
@@ -324,9 +324,9 @@ Topics covered:
 3. Cell Design and Characterization Flow
 4. General Timing Characterization Parameters
 
-[Open Physical Design Module 2 →](./PD/Module%202/README.md)
+[Open Physical Design Module 2 →](./Physical_Design/Module%202/README.md)
 
-[Open Physical Design Documentation →](./PD/README.md)
+[Open Physical Design Documentation →](./Physical_Design/README.md)
 
 ---
 
