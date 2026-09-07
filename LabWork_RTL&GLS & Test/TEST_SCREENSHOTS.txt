@@ -1,0 +1,10 @@
+Added for the Final Assessment – Sequence Detector
+
+'
+'1. sequence_detector_rtl.png      - RTL waveform
+'
+'2. sequence_detector_stat.png     - Yosys mapped statistics
+'
+'3. sequence_detector_synthesis.png - technology-mapped schematic
+'
+'4. sequence_detector_gls.png      - final GLS waveform
