@@ -1,229 +1,235 @@
-<<<<<<< HEAD
 # Physical Design (PD) — VLSI / OpenLANE Workshop
 
 ## Overview
 
-This repository contains the practical work, screenshots, and notes completed across all **five modules** of the Physical Design workshop. The workshop progresses from open-source EDA and the Sky130 PDK through floorplanning, standard-cell design and characterization, timing analysis, clock-tree synthesis, routing, and design-rule checking.
+This repository documents the complete **Physical Design (PD)** workshop across five modules. The workshop progresses from the fundamentals of open-source EDA and the Sky130 PDK through floorplanning, standard-cell placement, cell design and characterization, timing analysis, clock-tree synthesis, power distribution, routing and final physical-design checks.
 
-The module sequence follows the supplied workshop topic list and preserves the practical figures provided for each module. Each module has its own `README.md` and `Images` directory.
+The five modules collectively provide a practical view of the **RTL-to-GDSII** implementation journey using an open-source tool flow. The detailed module topics are based on the supplied workshop topic list. fileciteturn0file0L1-L16
 
-## Modules Covered
+## Workshop Roadmap
 
-### Module 1 — Inception of Open-Source EDA, OpenLANE and Sky130 PDK
+```text
+Module 1
+Open-Source EDA + OpenLANE + Sky130
+          ↓
+Module 2
+Floorplanning + Library Binding + Placement
+          ↓
+Module 3
+Standard-Cell Layout + ngspice + Magic + DRC
+          ↓
+Module 4
+Timing Analysis + OpenSTA + Clock Tree Synthesis
+          ↓
+Module 5
+PDN + Routing + TritonRoute + DRC / Post-Route
+```
 
-Covers the foundations of open-source digital ASIC design: QFN-48 package/chip terminology, RISC-V, the path from software applications to hardware, SoC design, OpenLANE, the simplified and detailed RTL2GDS flow, OpenLANE directory structure, design preparation, synthesis review, project Git information, and synthesis-result characterization.
-=======
-# Physical Design (PD) — VLSI / OpenLane Workshop
+## Module 1 — Inception of Open-Source EDA, OpenLANE and Sky130 PDK
 
-This folder contains the practical work, screenshots, and notes completed during the **Physical Design** module of the workshop.
+The first module builds the foundation for the complete flow. It covers package/chip terminology, RISC-V, software-to-hardware concepts, open-source digital ASIC design, the RTL-to-GDSII flow, OpenLANE, the Sky130 PDK, project directory structure, design preparation and synthesis.
 
-The module introduces the fundamentals of open-source EDA, OpenLane, the Sky130 PDK, chip floorplanning, standard-cell placement, and basic physical-design concepts.
+**Main areas:**
 
-## Modules Covered
-
-### Module 1 — Inception of Open-Source EDA, OpenLane and Sky130 PDK
-
-Topics covered:
-
-- How to Talk to Computers
-- SoC Design and OpenLane
-- Getting Familiar with Open-Source EDA Tools
-- OpenLane flow and its major stages
-- Technology-specific and tool-specific concepts
-- Synthesis and netlist generation
-- Basic timing-related calculations
->>>>>>> 54e94f512135261a796442041bef0920545f2e74
+- QFN-48 package, chip, pads, core, die and IPs
+- RISC-V and SoC concepts
+- Open-source digital ASIC design
+- Simplified and detailed RTL-to-GDSII flow
+- OpenLANE and Strive chipsets
+- OpenLANE project structure
+- Design preparation and synthesis
+- Synthesis netlist and synthesis-result characterization
 
 [Open Module 1 →](./Module%201/README.md)
 
-### Module 2 — Good Floorplan vs Bad Floorplan and Introduction to Library Cells
+## Module 2 — Good Floorplan vs Bad Floorplan and Introduction to Library Cells
 
-<<<<<<< HEAD
-Covers chip floorplanning considerations, utilization and aspect ratio, pre-placed cells, decoupling capacitors, power planning, pin placement, floorplan execution and inspection, library binding, placement optimization, RePlAce congestion-aware placement, cell design/characterization flow, and timing characterization parameters.
+Module 2 moves into physical organization of the design. It covers floorplanning, utilization, aspect ratio, pre-placed cells, decoupling capacitors, power planning, pin placement, blockages, Magic-based floorplan inspection, library binding and placement optimization.
+
+**Main areas:**
+
+- Utilization factor and aspect ratio
+- Pre-placed cells and decoupling capacitors
+- Power planning and pin placement
+- Floorplan execution and visualization
+- Library binding and initial placement
+- Wire-length and capacitance-based placement optimization
+- Congestion-aware placement using RePlAce
+- Standard-cell design and characterization
+- Timing thresholds, propagation delay and transition time
 
 [Open Module 2 →](./Module%202/README.md)
 
-### Module 3 — Design Library Cell Using Magic Layout and ngspice Characterization
+## Module 3 — Design Library Cell Using Magic Layout and ngspice Characterization
 
-Covers CMOS inverter ngspice simulations, SPICE deck creation, switching threshold, static and dynamic simulation, CMOS fabrication/layout formation steps, Sky130 basic layers and LEF, standard-cell layout and SPICE extraction, Sky130 model-file characterization, Magic options and DRC rules, and practical DRC-rule exercises.
+Module 3 connects circuit-level behaviour with physical standard-cell implementation. It covers CMOS inverter simulation, SPICE deck creation, switching threshold, static/dynamic simulation, CMOS fabrication-related layout steps, Sky130 technology files, Magic layout work, extraction and DRC exercises.
+
+**Main areas:**
+
+- CMOS inverter simulation using ngspice
+- SPICE deck creation and transient analysis
+- Switching threshold Vm
+- CMOS fabrication sequence
+- Active regions, wells, gate, LDD, source/drain and interconnects
+- Standard-cell layout
+- Layout-to-SPICE extraction
+- Sky130 technology files and model files
+- Magic and DRC rules
+- DRC-error analysis and correction
 
 [Open Module 3 →](./Module%203/README.md)
 
-### Module 4 — Pre-Layout Timing Analysis and Importance of Good Clock Tree
+## Module 4 — Pre-Layout Timing Analysis and Importance of Good Clock Tree
 
-Covers timing modelling using delay tables, grid-to-track and layout-to-LEF preparation, timing libraries, OpenSTA analysis with ideal clocks, setup time, jitter and uncertainty, synthesis optimization for setup violations, TritonCTS clock-tree synthesis, H-Tree buffering, crosstalk and clock shielding, and setup/hold analysis using real clocks.
+Module 4 focuses on timing and clock distribution. It covers delay tables, track information, standard-cell LEF, timing libraries, OpenSTA timing analysis, setup/hold timing, jitter and uncertainty, TritonCTS, H-tree clock distribution, buffering, shielding, crosstalk and real-clock analysis.
+
+**Main areas:**
+
+- Grid-to-track and Magic-to-LEF concepts
+- Timing libraries and delay tables
+- SDC-based timing analysis
+- OpenSTA and timing paths
+- Setup and hold analysis
+- Clock jitter and uncertainty
+- Clock-tree synthesis with TritonCTS
+- H-tree routing and clock buffering
+- Crosstalk and clock-net shielding
+- Timing analysis with real clocks
+- Effect of CTS buffer sizing on setup and hold timing
 
 [Open Module 4 →](./Module%204/README.md)
 
-### Module 5 — Final Steps for RTL2GDS Using TritonRoute and OpenSTA
+## Module 5 — Final Steps for RTL2GDS Using TritonRoute and OpenSTA
 
-Covers maze routing using Lee’s algorithm, DRC, power distribution network construction, power straps to standard-cell power, global and detail routing, TritonRoute configuration and features, route-guide handling, inter-guide connectivity, intra-/inter-layer routing, connectivity handling, routing topology, and post-route files.
+The final module concentrates on routing and the completion of the physical implementation. It covers maze routing, DRC, the power distribution network, global and detailed routing, TritonRoute route guides, connectivity handling, intra-/inter-layer routing, routing topology and post-route files.
+
+**Main areas:**
+
+- Lee's maze-routing algorithm
+- Design Rule Checking
+- Power Distribution Network construction
+- Power straps and standard-cell power
+- Global and detailed routing
+- TritonRoute configuration and features
+- Pre-processed route guides
+- Inter-guide connectivity
+- Intra-layer and inter-layer routing
+- Routing topology and connectivity handling
+- Final post-route files
 
 [Open Module 5 →](./Module%205/README.md)
 
-## Overall Workshop Flow
+## Overall RTL-to-GDSII Learning Path
 
-The five modules build a continuous physical-design workflow:
+The workshop follows a logical progression:
 
-```text
-Open-Source EDA / Sky130 PDK
-            ↓
-       OpenLANE / RTL2GDS
-            ↓
-        Synthesis Review
-            ↓
-         Floorplanning
-            ↓
- Library Binding & Placement
-            ↓
- Standard-Cell Design / Characterization
-            ↓
-    Timing Modelling / OpenSTA
-            ↓
- Clock Tree Synthesis / TritonCTS
-            ↓
-  Real-Clock Setup & Hold Analysis
-            ↓
-       Power Distribution
-            ↓
-      Global / Detail Routing
-            ↓
-       TritonRoute / DRC
-            ↓
-        Post-Route Files
-```
+1. **Understand the technology and flow** — Open-source EDA, Sky130 PDK and OpenLANE.
+2. **Prepare the physical organization** — floorplan, utilization, aspect ratio, power and pins.
+3. **Bind and place cells** — libraries, placement optimization and congestion awareness.
+4. **Build and characterize cells** — CMOS inverter simulation, Magic layout, extraction and DRC.
+5. **Analyze timing** — timing libraries, delay tables, OpenSTA and timing constraints.
+6. **Build the clock network** — TritonCTS, buffering, H-tree concepts and signal integrity.
+7. **Distribute power and route signals** — PDN, global routing and detailed routing.
+8. **Perform physical checks and inspect results** — DRC, connectivity, routing topology and post-route outputs.
 
-This sequence reflects the topics supplied for the five workshop modules; the repository is organized to make the progression and practical evidence easy to follow.
+## Overall Figures / Workshop Highlights
+
+The detailed figures are embedded inside the README of each module so that every concept is documented alongside its corresponding practical evidence.
+
+### OpenLANE / RTL-to-GDSII
+
+![Simplified RTL to GDSII Flow](./Module%201/Images/Simplified_RTL_to_GDSII_flow.png)
+
+![OpenLANE ASIC Flow](./Module%201/Images/Openlane_ASIC_flow.png)
+
+### Floorplanning and Placement
+
+![Floorplan](./Module%202/Images/floorplan.png)
+
+![Placement Standard Cell](./Module%202/Images/placement_standard_cell.png)
+
+### Standard-Cell / CMOS Layout
+
+![Layout](./Module%203/Images/Layout.png)
+
+![SPICE Waveforms](./Module%203/Images/Spice_waveforms.png)
+
+### Timing and CTS
+
+![OpenSTA Prelayout Timing Analysis](./Module%204/Images/OpenSTA_Prelayout_Timing_Analysis.png)
+
+![Clock Tree Synthesis](./Module%204/Images/clock_tree_synthesis.png)
+
+### Routing
+
+![Routing Using TritonRoute](./Module%205/Images/routing_using_tritonRoute.png)
+
+![Routing Topology Algorithm](./Module%205/Images/Routing_topology_algorithm.png)
 
 ## Repository Structure
 
 ```text
 Physical_Design_PD/
+│
 ├── Module 1/
 │   ├── Images/
-│   │   └── <Module 1 practical figures>
 │   └── README.md
 │
 ├── Module 2/
 │   ├── Images/
-│   │   └── <Module 2 practical figures>
 │   └── README.md
 │
 ├── Module 3/
 │   ├── Images/
-│   │   └── <Module 3 practical figures>
 │   └── README.md
 │
 ├── Module 4/
 │   ├── Images/
-│   │   └── <Module 4 practical figures>
 │   └── README.md
 │
 ├── Module 5/
 │   ├── Images/
-│   │   └── <Module 5 practical figures>
-=======
-Topics covered:
-
-- Chip floorplanning considerations
-- Utilization factor and aspect ratio
-- Cell design and characterization flow
-- General timing characterization parameters
-- Floorplan visualization using Magic
-- Metal layers and standard-cell placement
-
-[Open Module 2 →](./Module%202/README.md)
-
-## Repository Structure
-
-```text
-PD/
-├── Module 1/
-│   ├── images/
-│   │   ├── chip_area.png
-│   │   ├── clock ratio&percentage.png
-│   │   ├── Openlane.png
-│   │   ├── overall_tech&tools.png
-│   │   ├── Synthesis_netlist.png
-│   │   ├── Technology_Specific.png
-│   │   └── Tools_Specfic.png
-│   └── README.md
-│
-├── Module 2/
-│   ├── images/
-│   │   ├── Design_name.png
-│   │   ├── floorplan.png
-│   │   ├── magic_flooorplan_layout.png
-│   │   ├── metal2.png
-│   │   ├── metal3.png
-│   │   └── placement_standard_cell.png
->>>>>>> 54e94f512135261a796442041bef0920545f2e74
 │   └── README.md
 │
 └── README.md
 ```
 
-<<<<<<< HEAD
-## Tools and Technologies Referenced
+Each module keeps its supplied figures in its own `Images` folder, while the corresponding `README.md` embeds those figures and explains the concepts, practical workflow and learning outcomes.
 
-- **OpenLANE / OpenLane** — RTL-to-GDS implementation flow
-- **Sky130 PDK** — technology files and models used in the workshop
-- **Magic** — layout viewing, extraction, and DRC-related work
-- **ngspice** — SPICE simulation and inverter characterization
+## Tools and Technologies Covered
+
+- **OpenLANE** — RTL-to-GDSII digital implementation flow
+- **Sky130 PDK** — technology/process information for the workshop
+- **Magic** — physical layout inspection and DRC-related work
+- **ngspice** — circuit-level simulation and characterization
 - **OpenSTA** — static timing analysis
 - **TritonCTS** — clock-tree synthesis
 - **TritonRoute** — routing
 - **RePlAce** — congestion-aware placement
 - **Linux / Ubuntu** — workshop environment
+- **SPICE / Liberty / LEF / SDC concepts** — supporting implementation data
 
 ## Overall Learning Outcomes
 
-After completing the five modules, the practical work provides exposure to:
+After completing the five modules, the workshop provides practical familiarity with:
 
-1. Open-source EDA and the role of a PDK in digital ASIC implementation.
-2. The OpenLANE RTL-to-GDS flow and its major stages.
-3. Design preparation and synthesis-result review.
-4. Chip floorplanning, utilization, aspect ratio, power planning, and pin placement.
-5. Library binding, standard-cell placement, placement optimization, and congestion awareness.
-6. CMOS inverter SPICE simulation and standard-cell layout/extraction.
-7. Sky130 layout layers, technology files, and DRC-rule handling.
-8. Timing libraries, delay tables, setup/hold analysis, jitter, and uncertainty.
-9. Clock-tree synthesis, buffering, H-Tree concepts, crosstalk, and shielding.
-10. Power distribution, global/detail routing, TritonRoute features, connectivity, DRC, and post-route outputs.
+1. Open-source EDA and the role of technology-specific PDK information.
+2. The complete RTL-to-GDSII implementation sequence.
+3. OpenLANE project organization and synthesis.
+4. Floorplan parameters and physical organization.
+5. Library binding, standard-cell placement and congestion awareness.
+6. CMOS standard-cell layout and circuit-level characterization.
+7. Magic layout inspection, extraction and DRC concepts.
+8. Timing libraries, delay tables and OpenSTA analysis.
+9. Setup, hold, jitter and uncertainty concepts.
+10. Clock-tree synthesis, buffering, shielding and signal integrity.
+11. Power distribution network construction.
+12. Global and detailed routing with TritonRoute.
+13. Routing connectivity, topology and post-route results.
 
-## Practical Evidence
+## Practical Documentation
 
-Each module's `Images` directory contains the corresponding figures supplied with the workshop material. The module README files retain the supplied topic organization and provide links to the figures so the repository can be used as both workshop documentation and a record of practical work.
-
-## Source Topic Coverage
-
-The complete five-module topic list supplied for this repository is represented in the five module README files. The original topic list contains the detailed `SKY130_Dx_SKy` and `SKY_Lx` sequence used to organize the workshop content.
-=======
-## Tools and Technologies
-
-- **OpenLane** — RTL-to-GDSII digital implementation flow
-- **Sky130 PDK** — Open-source 130 nm process design kit
-- **Magic** — Layout viewing and physical-design inspection
-- **Linux / Ubuntu** — Workshop environment
-- **Open-source EDA tools** — Synthesis, floorplanning, placement and related stages
-
-## Learning Outcomes
-
-After completing these modules, the practical work provides familiarity with:
-
-1. The role of EDA tools in digital IC design.
-2. The OpenLane RTL-to-GDSII flow.
-3. The Sky130 PDK and technology-specific files.
-4. Synthesis and generated gate-level netlists.
-5. Floorplan parameters such as utilization and aspect ratio.
-6. Standard-cell placement and physical layout visualization.
-7. Metal layers used in an IC layout.
-8. Basic timing characterization concepts.
-
-## Practical Evidence
-
-The `images` directory inside each module contains screenshots captured during the practical sessions. They are organized by module so that the repository can be used both as workshop documentation and as a record of completed practical work.
->>>>>>> 54e94f512135261a796442041bef0920545f2e74
+The `Images` directory inside every module preserves the workshop figures supplied for that module. The module README files now act as visual documentation by embedding the relevant figures directly beside the associated concepts. This keeps the repository useful as both a **workshop record** and a **revision resource**.
 
 ## Author
 
