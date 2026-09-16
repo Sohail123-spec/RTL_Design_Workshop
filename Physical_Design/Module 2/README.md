@@ -1,13 +1,26 @@
-<<<<<<< HEAD
 # Module 2 — Good Floorplan vs Bad Floorplan and Introduction to Library Cells
 
 ## Overview
 
-This module moves from the introductory OpenLANE flow into physical floorplanning, library binding, placement, standard-cell design/characterization, and timing-characterization concepts. The practical work uses OpenLANE and Magic to inspect floorplan and placement results.
+Module 2 moves from the introductory RTL-to-GDSII flow into physical organization of the chip. The module covers floorplanning, utilization, aspect ratio, pre-placed cells, decoupling capacitors, power planning, pin placement and placement blockages. It then moves into library binding, placement optimization, standard-cell design and characterization, and basic timing-characterization parameters.
+
+OpenLANE is used to run and inspect the floorplan, while Magic is introduced for visual inspection of the physical layout.
+
+## Learning Objectives
+
+- Understand why floorplanning is performed before detailed placement and routing.
+- Explain utilization factor and aspect ratio and their relationship to available placement area.
+- Understand the purpose of pre-placed cells and decoupling capacitors.
+- Understand basic power-planning and pin-placement considerations.
+- Explain how a synthesized netlist is bound to physical library cells.
+- Understand placement optimization using estimated wire-length and capacitance.
+- Explain the role of congestion-aware placement and RePlAce.
+- Describe the basic standard-cell design and characterization flow.
+- Understand timing thresholds, propagation delay and transition time.
 
 ## Topics Covered
 
-### SKY130_D2_SK1 — Chip Floor planning considerations
+### SKY130_D2_SK1 — Chip Floor Planning Considerations
 
 - Utilization factor and aspect ratio
 - Concept of pre-placed cells
@@ -24,167 +37,133 @@ This module moves from the introductory OpenLANE flow into physical floorplannin
 - Optimize placement using estimated wire-length and capacitance
 - Final placement optimization
 - Need for libraries and characterization
-- Congestion aware placement using RePlAce
+- Congestion-aware placement using RePlAce
 
-### SKY130_D2_SK3 — Cell design and characterization flows
+### SKY130_D2_SK3 — Cell Design and Characterization Flows
 
 - Inputs for cell design flow
 - Circuit design step
 - Layout design step
 - Typical characterization flow
 
-### SKY130_D2_SK4 — General timing characterization parameters
+### SKY130_D2_SK4 — General Timing Characterization Parameters
 
 - Timing threshold definitions
 - Propagation delay and transition time
 
-## Practical Focus
+## Floorplanning Concepts
 
-The module covers how floorplan parameters, pre-placed cells, power planning, pin placement, placement optimization, library characterization, and congestion-aware placement affect physical implementation. It also introduces the timing parameters used to describe cell behavior.
+### Utilization Factor
 
-## Figures / Practical Evidence
+Utilization describes how much of the available core area is occupied by placed standard-cell area. Very high utilization can reduce available routing space and increase congestion, while very low utilization can waste silicon area.
 
-All figures supplied with Module 2 are retained in the `Images` directory.
+### Aspect Ratio
 
-- **Art of Layout** — [Figure](<./Images/Art_of_Layout.png>)
-- **Cell Design flow** — [Figure](<./Images/Cell_Design_flow.png>)
-- **Design name** — [Figure](<./Images/Design_name.png>)
-- **Noise margin Summary** — [Figure](<./Images/Noise_margin_Summary.png>)
-- **Optimize placement** — [Figure](<./Images/Optimize_placement.png>)
-- **Screenshot 2026-09-11 130151** — [Figure](<./Images/Screenshot 2026-09-11 130151.png>)
-- **Timing Characteristics** — [Figure](<./Images/Timing_Characteristics.png>)
-- **Transient Time** — [Figure](<./Images/Transient_Time.png>)
-- **adding Decoupling capacitor** — [Figure](<./Images/adding_Decoupling_capacitor.png>)
-- **bind netlist** — [Figure](<./Images/bind_netlist.png>)
-- **floorplan** — [Figure](<./Images/floorplan.png>)
-- **location of preplaced cell** — [Figure](<./Images/location_of_preplaced_cell.png>)
-- **magic flooorplan layout** — [Figure](<./Images/magic_flooorplan_layout.png>)
-- **metal2** — [Figure](<./Images/metal2.png>)
-- **metal3** — [Figure](<./Images/metal3.png>)
-- **pin placement** — [Figure](<./Images/pin_placement.png>)
-- **placement** — [Figure](<./Images/placement.png>)
-- **placement standard cell** — [Figure](<./Images/placement_standard_cell.png>)
-- **power placement** — [Figure](<./Images/power_placement.png>)
-- **prepplaced cell** — [Figure](<./Images/prepplaced_cell.png>)
-- **stick Diagram** — [Figure](<./Images/stick_Diagram.png>)
+Aspect ratio describes the relationship between the height and width of the core or die. The chosen aspect ratio affects physical organization, routing resources and overall chip shape.
+
+### Pre-placed Cells
+
+Some cells or macros must be placed at predetermined locations or regions before standard-cell placement. Their positions influence available placement and routing resources.
+
+### Decoupling Capacitors
+
+Decoupling capacitors are included as part of power integrity considerations. They help provide local charge during switching activity and reduce undesirable power-supply variations.
+
+### Pin Placement and Blockages
+
+I/O pin locations and placement blockages affect how signals enter and leave the core and where standard cells can be legally placed. These decisions therefore influence routability and congestion.
+
+## Placement Flow
+
+```text
+Synthesized Netlist
+        ↓
+Library Binding
+        ↓
+Initial Placement
+        ↓
+Wire-Length / Capacitance Estimation
+        ↓
+Placement Optimization
+        ↓
+Congestion-Aware Placement
+        ↓
+Final Placement
+```
+
+## Standard-Cell Characterization
+
+A standard cell needs characterized timing information so that implementation and timing-analysis tools can estimate its behavior under different conditions. The module introduces the flow from circuit design to layout and characterization, followed by parameters such as timing thresholds, propagation delay and transition time.
+
+## Figures and Practical Evidence
+
+### 1. Floorplan and Physical Organization
+
+![Floorplan](./Images/floorplan.png)
+
+![Design Name](./Images/Design_name.png)
+
+![Pre-placed Cell](./Images/prepplaced_cell.png)
+
+![Location of Pre-placed Cell](./Images/location_of_preplaced_cell.png)
+
+![Power Placement](./Images/power_placement.png)
+
+![Pin Placement](./Images/pin_placement.png)
+
+![Adding Decoupling Capacitor](./Images/adding_Decoupling_capacitor.png)
+
+![Magic Floorplan Layout](./Images/magic_flooorplan_layout.png)
+
+### 2. Placement and Library Binding
+
+![Bind Netlist](./Images/bind_netlist.png)
+
+![Placement](./Images/placement.png)
+
+![Placement Standard Cell](./Images/placement_standard_cell.png)
+
+![Optimize Placement](./Images/Optimize_placement.png)
+
+![Art of Layout](./Images/Art_of_Layout.png)
+
+### 3. Cell Design and Characterization
+
+![Cell Design Flow](./Images/Cell_Design_flow.png)
+
+![Stick Diagram](./Images/stick_Diagram.png)
+
+![Noise Margin Summary](./Images/Noise_margin_Summary.png)
+
+![Timing Characteristics](./Images/Timing_Characteristics.png)
+
+![Transient Time](./Images/Transient_Time.png)
+
+![Additional Practical Result](./Images/Screenshot%202026-09-11%20130151.png)
+
+### 4. Metal-Layer Examples
+
+![Metal 2](./Images/metal2.png)
+
+![Metal 3](./Images/metal3.png)
+
+## Practical Workflow in OpenLANE
+
+The practical sequence introduced in this module is to prepare the design, configure the floorplan-related settings, run the floorplan stage, inspect generated files and then visualize the resulting layout in Magic. Placement is subsequently considered in terms of library binding, optimization and congestion.
 
 ## Key Takeaways
 
-- Floorplanning establishes the physical organization and available space for implementation.
-- Utilization and aspect ratio are key floorplan parameters.
-- Pre-placed cells, decoupling capacitors, power planning, and pin placement are considered during floorplanning.
-- Placement binds the synthesized netlist to physical library cells and is optimized for wire-length, capacitance, and congestion.
-- Cell design and characterization provide information needed by implementation tools.
-- Timing threshold definitions, propagation delay, and transition time are introduced as characterization parameters.
-=======
-# Module 2 — Floorplanning and Introduction to Library Cells
+- Floorplanning determines the initial physical organization of the design.
+- Utilization and aspect ratio directly affect available physical resources.
+- Macros, pre-placed cells, power structures, pins and blockages must be considered before detailed placement.
+- Placement is not simply putting cells into empty locations; wire-length, capacitance and congestion must also be considered.
+- Standard-cell characterization supplies timing information needed by implementation tools.
+- Propagation delay and transition time are important parameters when describing cell timing behavior.
 
-## Overview
+## Tools / Technologies
 
-This module introduces physical-design floorplanning and the relationship between floorplan parameters and chip implementation quality.
-
-The practical work covers floorplan considerations, utilization factor, aspect ratio, cell design and characterization, timing characterization parameters, metal layers, and standard-cell placement.
-
-## Topics Covered
-
-### 1. Chip Floorplanning Considerations
-
-Floorplanning determines the basic physical organization of a chip, including the placement and available area for major design components.
-
-Important considerations include:
-
-- Die/core dimensions
-- Placement area
-- Utilization
-- Aspect ratio
-- I/O and routing requirements
-- Available space for standard cells
-
-### 2. Utilization Factor and Aspect Ratio
-
-**Utilization factor** describes how much of the available core area is occupied by placed cells.
-
-A commonly used relationship is:
-
-```text
-Utilization = (Area occupied by cells / Available core area) × 100
-```
-
-**Aspect ratio** describes the relationship between the height and width of the floorplan:
-
-```text
-Aspect Ratio = Height / Width
-```
-
-These parameters influence routing resources, congestion, and the overall physical implementation.
-
-### 3. Cell Design and Characterization Flow
-
-Standard cells are designed and characterized so that their physical and timing behavior can be used by digital implementation tools.
-
-Characterization provides information such as:
-
-- Delay
-- Transition time
-- Power-related behavior
-- Input/output timing relationships
-
-### 4. General Timing Characterization Parameters
-
-Timing characterization involves parameters that describe how a cell behaves for different input transitions, output loads, and operating conditions.
-
-Important concepts include:
-
-- Cell delay
-- Slew / transition
-- Input capacitance
-- Output load
-- Setup and hold behavior
-
-### 5. Floorplan Visualization
-
-The practical work includes viewing the generated floorplan using Magic.
-
-### 6. Metal Layers
-
-The practical screenshots demonstrate different metal layers, including Metal 2 and Metal 3, used for interconnection in the physical layout.
-
-### 7. Standard-Cell Placement
-
-The final practical visualization shows the placement of standard cells within the floorplan.
-
-## Practical Screenshots
-
-### Design Name / Configuration
-
-![Design Name](./images/Design_name.png)
-
-### Floorplan
-
-![Floorplan](./images/floorplan.png)
-
-### Magic Floorplan Layout
-
-![Magic Floorplan Layout](./images/magic_flooorplan_layout.png)
-
-### Metal 2
-
-![Metal 2](./images/metal2.png)
-
-### Metal 3
-
-![Metal 3](./images/metal3.png)
-
-### Standard-Cell Placement
-
-![Standard Cell Placement](./images/placement_standard_cell.png)
-
-## Key Takeaways
-
-- Floorplanning is an important early stage of physical design.
-- Utilization and aspect ratio directly affect the available physical-design space.
-- Standard cells must be physically and electrically characterized before being used effectively in implementation.
-- Metal layers provide routing resources for connecting cells.
-- Placement determines the physical locations of standard cells before later routing stages.
-- Magic can be used to inspect and visualize physical layout results.
->>>>>>> 54e94f512135261a796442041bef0920545f2e74
+- OpenLANE
+- Magic
+- Sky130 standard-cell libraries
+- RePlAce placement engine
+- Linux / Ubuntu

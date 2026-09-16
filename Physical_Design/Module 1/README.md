@@ -1,9 +1,24 @@
-<<<<<<< HEAD
 # Module 1 — Inception of Open-Source EDA, OpenLANE and Sky130 PDK
 
 ## Overview
 
-This module establishes the foundation for the Physical Design workshop by introducing open-source EDA, the OpenLANE flow, the Sky130 PDK, SoC/RISC-V context, and the early stages of an RTL-to-GDS implementation flow. The practical material also covers OpenLANE project structure, design preparation, synthesis review, and characterization of synthesis results.
+Module 1 establishes the foundation for the Physical Design workshop. It starts with the relationship between software and hardware, introduces chips, packages, pads, cores, dies and IPs, and then moves into RISC-V, SoC design, open-source EDA, the Sky130 PDK and the OpenLANE RTL-to-GDSII flow.
+
+The practical part introduces the OpenLANE directory structure, design-preparation stage, synthesis, generated netlists and basic interpretation of synthesis results. These concepts form the base for the floorplanning, placement, timing and routing work covered in later modules.
+
+## Learning Objectives
+
+By the end of this module, the learner should be able to:
+
+- Explain the basic structure of a digital IC from package and chip level down to the core and IP blocks.
+- Relate software applications, compilers, RTL and hardware implementation.
+- Describe the role of RISC-V in an open instruction-set architecture ecosystem.
+- Identify the major components of an open-source digital ASIC flow.
+- Explain the simplified RTL-to-GDSII flow and the purpose of OpenLANE.
+- Understand why a PDK is required for technology-specific physical implementation.
+- Navigate the important parts of an OpenLANE project directory.
+- Understand the purpose of design preparation and synthesis.
+- Inspect a generated synthesis netlist and basic synthesis statistics.
 
 ## Topics Covered
 
@@ -23,145 +38,162 @@ This module establishes the foundation for the Physical Design workshop by intro
 ### SKY130_D1_SK3 — Get familiar to open-source EDA tools
 
 - OpenLANE directory structure in detail
-- Design preparation step
-- Review files after design prep and run synthesis
+- Design Preparation Step
+- Review files after design preparation and run synthesis
 - OpenLANE project Git link description
 - Steps to characterize synthesis results
 
-## Practical Focus
+## Conceptual Flow
 
-The module connects the conceptual RTL-to-GDS flow with the practical OpenLANE environment. It includes figures covering chip/package terminology, RISC-V and SoC concepts, the overall open-source digital design flow, OpenLANE, synthesis, floorplanning, placement, routing, sign-off, technology/tool-specific information, and related implementation concepts.
+```text
+Software Application
+        ↓
+Compiler / Software Tools
+        ↓
+RTL Description
+        ↓
+Synthesis
+        ↓
+Gate-Level Netlist
+        ↓
+Floorplan
+        ↓
+Placement
+        ↓
+Clock Tree Synthesis
+        ↓
+Routing
+        ↓
+Sign-Off
+        ↓
+GDSII
+```
 
-## Figures / Practical Evidence
+OpenLANE is studied as the practical framework that connects these implementation stages. The Sky130 PDK supplies technology-specific information required by the tools.
 
-All figures supplied with Module 1 are retained in the `Images` directory. The filenames below are the original supplied filenames.
+## Practical Work
 
-- **Arduino chip** — [Figure](<./Images/Arduino_chip.png>)
-- **Clock Tree Synthesis** — [Figure](<./Images/Clock_Tree_Synthesis.png>)
-- **Dealing with Antenna Violations** — [Figure](<./Images/Dealing_with_Antenna_Violations.png>)
-- **Design Exploration** — [Figure](<./Images/Design_Exploration.png>)
-- **Design forA Test DFT** — [Figure](<./Images/Design_forA_Test_DFT.png>)
-- **Digigtal ASIC Design** — [Figure](<./Images/Digigtal_ASIC_Design.png>)
-- **Floor Planing** — [Figure](<./Images/Floor_Planing.png>)
-- **Foundary IP's  &  Macros** — [Figure](<./Images/Foundary_IP's_&_Macros.png>)
-- **Logic Equivalance Check LEC** — [Figure](<./Images/Logic_Equivalance_Check_LEC.png>)
-- **OpenLane Regression Testing** — [Figure](<./Images/OpenLane_Regression_Testing.png>)
-- **OpenSource Digitsl Design** — [Figure](<./Images/OpenSource_Digitsl_Design.png>)
-- **Openlane** — [Figure](<./Images/Openlane.png>)
-- **Openlane ASIC flow** — [Figure](<./Images/Openlane_ASIC_flow.png>)
-- **Placement** — [Figure](<./Images/Placement.png>)
-- **Power Planning** — [Figure](<./Images/Power_Planning.png>)
-- **Processor SoC** — [Figure](<./Images/Processor_SoC.png>)
-- **RISC-V Archetechture  &  Layout** — [Figure](<./Images/RISC-V_Archetechture_&_Layout.png>)
-- **Routing** — [Figure](<./Images/Routing.png>)
-- **SignOff** — [Figure](<./Images/SignOff.png>)
-- **Simplified RTL to GDSII flow** — [Figure](<./Images/Simplified_RTL_to_GDSII_flow.png>)
-- **Static Time Analysis** — [Figure](<./Images/Static_Time_Analysis.png>)
-- **Synthesis** — [Figure](<./Images/Synthesis.png>)
-- **Synthesis Exploration** — [Figure](<./Images/Synthesis_Exploration.png>)
-- **Synthesis netlist** — [Figure](<./Images/Synthesis_netlist.png>)
-- **System overview** — [Figure](<./Images/System_overview.png>)
-- **Technology Specific** — [Figure](<./Images/Technology_Specific.png>)
-- **Tools Specfic** — [Figure](<./Images/Tools_Specfic.png>)
-- **What is PDK** — [Figure](<./Images/What is PDK.png>)
-- **What is PDK2** — [Figure](<./Images/What is PDK2.png>)
-- **chip1** — [Figure](<./Images/chip1.png>)
-- **chip2** — [Figure](<./Images/chip2.png>)
-- **chip area** — [Figure](<./Images/chip_area.png>)
-- **clock ratio & percentage** — [Figure](<./Images/clock ratio&percentage.png>)
-- **compiler input  &  output** — [Figure](<./Images/compiler_input_&_output.png>)
-- **overall tech & tools** — [Figure](<./Images/overall_tech&tools.png>)
-- **package** — [Figure](<./Images/package.png>)
-- **strive SoC Family** — [Figure](<./Images/strive_SoC_Family.png>)
+The module includes practical exposure to OpenLANE project organization, preparation of a design, synthesis execution, inspection of generated files and characterization of synthesis results. The figures below are embedded directly so that the README can be used as a visual workshop record without opening each image separately.
+
+## Figures and Practical Evidence
+
+### 1. Chip, Package, SoC and RISC-V Fundamentals
+
+**Package and chip structure**
+
+![Package](./Images/package.png)
+
+![Chip 1](./Images/chip1.png)
+
+![Chip 2](./Images/chip2.png)
+
+![Chip Area](./Images/chip_area.png)
+
+![Arduino Chip](./Images/Arduino_chip.png)
+
+**Processor and RISC-V context**
+
+![Processor SoC](./Images/Processor_SoC.png)
+
+![RISC-V Architecture and Layout](./Images/RISC-V_Archetechture_&_Layout.png)
+
+![Strive SoC Family](./Images/strive_SoC_Family.png)
+
+![System Overview](./Images/System_overview.png)
+
+### 2. Open-Source Digital ASIC Design and PDK
+
+![Open-Source Digital Design](./Images/OpenSource_Digitsl_Design.png)
+
+![Digital ASIC Design](./Images/Digigtal_ASIC_Design.png)
+
+![What is PDK](./Images/What is PDK.png)
+
+![What is PDK - Additional View](./Images/What is PDK2.png)
+
+![Technology Specific](./Images/Technology_Specific.png)
+
+![Tools Specific](./Images/Tools_Specfic.png)
+
+![Overall Technology and Tools](./Images/overall_tech&tools.png)
+
+![Foundry IPs and Macros](./Images/Foundary_IP's_&_Macros.png)
+
+### 3. RTL-to-GDSII and OpenLANE Flow
+
+![Simplified RTL to GDSII Flow](./Images/Simplified_RTL_to_GDSII_flow.png)
+
+![OpenLANE ASIC Flow](./Images/Openlane_ASIC_flow.png)
+
+![OpenLANE](./Images/Openlane.png)
+
+![Design Exploration](./Images/Design_Exploration.png)
+
+![OpenLANE Regression Testing](./Images/OpenLane_Regression_Testing.png)
+
+### 4. Synthesis and Netlist
+
+![Compiler Input and Output](./Images/compiler_input_&_output.png)
+
+![Synthesis](./Images/Synthesis.png)
+
+![Synthesis Netlist](./Images/Synthesis_netlist.png)
+
+![Synthesis Exploration](./Images/Synthesis_Exploration.png)
+
+### 5. Physical Design Stages Introduced
+
+![Floor Planning](./Images/Floor_Planing.png)
+
+![Placement](./Images/Placement.png)
+
+![Clock Tree Synthesis](./Images/Clock_Tree_Synthesis.png)
+
+![Power Planning](./Images/Power_Planning.png)
+
+![Routing](./Images/Routing.png)
+
+![Static Timing Analysis](./Images/Static_Time_Analysis.png)
+
+![Dealing with Antenna Violations](./Images/Dealing_with_Antenna_Violations.png)
+
+![Logic Equivalence Check](./Images/Logic_Equivalance_Check_LEC.png)
+
+![Design for Test](./Images/Design_forA_Test_DFT.png)
+
+![Sign-Off](./Images/SignOff.png)
+
+### 6. Timing / Clock Information
+
+![Clock Ratio and Percentage](./Images/clock%20ratio%26percentage.png)
+
+## Important Concepts
+
+### What is a PDK?
+
+A Process Design Kit provides the technology-specific information required by EDA tools to design and implement a circuit for a particular semiconductor process. In this workshop, the Sky130 PDK is used as the technology context.
+
+### What is Synthesis?
+
+Synthesis converts an RTL description into a gate-level representation using available standard-cell libraries and design constraints. The resulting netlist becomes an input to subsequent physical implementation stages.
+
+### Why OpenLANE?
+
+The workshop uses OpenLANE to demonstrate an open-source digital ASIC implementation flow. It provides a practical environment in which synthesis and later physical-design stages can be executed using open-source tools and the Sky130 technology.
 
 ## Key Takeaways
 
-- Open-source EDA tools form the practical environment used for digital ASIC implementation.
-- OpenLANE is introduced as the implementation flow connecting RTL and physical-design stages.
-- The Sky130 PDK provides technology-specific information used by the flow.
-- The module introduces synthesis and the generated gate-level netlist before later physical-design stages.
-- OpenLANE directory structure, design preparation, synthesis review, and synthesis-result characterization are part of the hands-on workflow.
-=======
-# Module 1 — Inception of Open-Source EDA, OpenLane and Sky130 PDK
+- Digital IC implementation is a chain of connected stages rather than a single tool operation.
+- The PDK establishes the technology context for the design tools.
+- OpenLANE connects RTL design with physical implementation stages.
+- Synthesis produces a gate-level netlist that is used by later physical-design stages.
+- Understanding the flow and project structure is essential before performing floorplanning, placement, CTS and routing.
 
-## Overview
+## Tools / Technologies Introduced
 
-This module introduces the foundations of open-source Electronic Design Automation (EDA), the OpenLane RTL-to-GDSII flow, and the Sky130 Process Design Kit (PDK).
-
-The practical work includes exploring the OpenLane environment, understanding the tools involved in the flow, examining technology-specific information, and observing synthesis/netlist generation.
-
-## Topics Covered
-
-### 1. How to Talk to Computers
-
-Understanding how a high-level hardware description is transformed into lower-level representations that can ultimately be implemented as digital hardware.
-
-### 2. SoC Design and OpenLane
-
-Introduction to:
-
-- System-on-Chip (SoC) design
-- RTL design
-- Synthesis
-- Physical design
-- OpenLane's role in the RTL-to-GDSII flow
-
-### 3. Getting Familiar with Open-Source EDA Tools
-
-Practical exploration of the tools and files used by OpenLane.
-
-### 4. Technology-Specific and Tool-Specific Concepts
-
-Understanding the distinction between:
-
-- **Technology-specific information** — related to the target fabrication technology/PDK.
-- **Tool-specific information** — related to the EDA tools used during implementation.
-
-### 5. Synthesis and Netlist
-
-The synthesis stage converts RTL into a gate-level representation using cells from the target standard-cell library.
-
-The practical screenshot shows the generated synthesis/netlist information.
-
-### 6. Basic Timing-Related Calculations
-
-The module also includes practical calculations involving clock-related values, ratios and percentages.
-
-## Practical Screenshots
-
-### OpenLane
-
-![OpenLane](./images/Openlane.png)
-
-### Overall Technology and Tools
-
-![Overall Technology and Tools](./images/overall_tech&tools.png)
-
-### Technology-Specific Information
-
-![Technology Specific](./images/Technology_Specific.png)
-
-### Tool-Specific Information
-
-![Tools Specific](./images/Tools_Specfic.png)
-
-### Synthesis Netlist
-
-![Synthesis Netlist](./images/Synthesis_netlist.png)
-
-### Chip Area
-
-![Chip Area](./images/chip_area.png)
-
-### Clock Ratio and Percentage
-
-![Clock Ratio and Percentage](./images/clock%20ratio%26percentage.png)
-
-## Key Takeaways
-
-- Open-source EDA tools can be used to implement digital IC designs.
-- OpenLane provides an automated RTL-to-GDSII implementation flow.
-- The PDK supplies technology-dependent information required by the implementation tools.
-- Synthesis produces a gate-level netlist suitable for subsequent physical-design stages.
-- Tool configuration and technology configuration serve different purposes in an EDA flow.
->>>>>>> 54e94f512135261a796442041bef0920545f2e74
+- OpenLANE
+- Sky130 PDK
+- Open-source EDA tools
+- Linux / Ubuntu environment
+- Synthesis and static-timing concepts
+- RISC-V / SoC design context
