@@ -15,8 +15,10 @@ This repository documents the practical work completed across five modules. Each
 | [Module 3](./Module%203) | Combinational and Sequential RTL Optimizations | ✅ Completed |
 | [Module 4](./Module%204) | Gate-Level Simulation, Blocking vs. Non-Blocking Assignments, and Synthesis–Simulation Mismatch | ✅ Completed |
 | [Module 5](./Module%205) | `if`/`case` Coverage, Latch Avoidance, and `for`/`generate` Constructs | ✅ Completed |
-| [LabWork_RTL&GLS & Test](./LabWork_RTL%26GLS%20%26%20Test) | RTL-to-Gate-Level Flow, MUX Design, GLS, Standard-Cell Analysis, and VSD BabySoC | ✅ Completed |
-| [Physical Design](./Physical_Design) | Open-Source EDA, OpenLane, SKY130 PDK, Floorplanning, Library Cells, and Timing Characterization | ✅ Completed |
+| [LabWork_RTL&GLS & Test](./lab%20work%20RLC_GLS_DAC) | RTL-to-Gate-Level Flow, MUX Design, GLS, Standard-Cell Analysis, and VSD BabySoC | ✅ Completed |
+| [Physical Design](./PD) | Open-Source EDA, OpenLane, SKY130 PDK, Floorplanning, Library Cells, and Timing Characterization | ✅ Completed |
+| [PD Lab Work](./PD_Lab_Work) | Physical-design lab exercises, floorplanning, standard-cell placement, and layout review | ✅ Completed |
+| [STA All Corners](./STA_All_Corners) | Multi-corner static timing analysis, setup/hold WNS and TNS, timing reports, and result visualization | ✅ Completed |
 
 ---
 
@@ -62,6 +64,7 @@ RTL_Design_Workshop/
     │   └── ...
     └── images/
 
+├── lab work RLC_GLS_DAC/
 ├── LabWork_RTL&GLS & Test/
 │   ├── README.md
 │   └── screenshots/
@@ -69,14 +72,26 @@ RTL_Design_Workshop/
 │       ├── *.jpg
 │       └── *.png
 │
-└── PD/
+├── PD/
+│   ├── README.md
+│   ├── Module 1/
+│   │   ├── README.md
+│   │   └── images/
+│   └── Module 2/
+│       ├── README.md
+│       └── images/
+│
+├── PD_Lab_Work/
+│   ├── README.md
+│   └── supporting lab files and images/
+│
+└── STA_All_Corners/
     ├── README.md
-    ├── Module 1/
-    │   ├── README.md
-    │   └── images/
-    └── Module 2/
-        ├── README.md
-        └── images/
+    ├── STA_All_Corners_Report.pdf
+    ├── corner_summary.csv
+    ├── corners/
+    ├── graphs/
+    └── logs/
 ```
 
 ---
@@ -184,6 +199,7 @@ The lab work documents the practical application of RTL-to-gate-level VLSI desig
 **Lab Work Structure:**
 
 ```text
+lab work RLC_GLS_DAC/
 LabWork_RTL&GLS & Test/
 │
 ├── README.md
@@ -313,6 +329,7 @@ Topics covered:
 - SoC Design and OpenLane
 - Getting Familiar with Open-Source EDA Tools
 
+[Open Physical Design Module 1 →](./PD/Module%201/README.md)
 [Open Physical Design Module 1 →](./Physical_Design/Module%201/README.md)
 
 #### Module 2 — Good Floorplan vs Bad Floorplan and Introduction to Library Cells
@@ -324,9 +341,93 @@ Topics covered:
 3. Cell Design and Characterization Flow
 4. General Timing Characterization Parameters
 
+[Open Physical Design Module 2 →](./PD/Module%202/README.md)
+
+[Open Physical Design Documentation →](./PD/README.md)
 [Open Physical Design Module 2 →](./Physical_Design/Module%202/README.md)
 
 [Open Physical Design Documentation →](./Physical_Design/README.md)
+
+
+
+---
+
+### PD Lab Work — Physical Design Lab
+
+The PD Lab Work section records practical exercises in the physical-design flow, complementing the existing Physical Design modules.
+
+**Key areas:**
+- Open-source EDA tools and the OpenLane flow
+- Sky130 PDK and standard-cell libraries
+- Floorplanning and floorplan visualization
+- Utilization factor and aspect ratio
+- Standard-cell placement
+- Metal-layer and layout inspection
+- Cell characterization and timing concepts
+- Review of lab outputs and supporting images
+
+**PD Lab Work Structure:**
+
+```text
+PD_Lab_Work/
+├── README.md
+└── supporting lab files and images/
+```
+
+[Open PD Lab Work →](./PD_Lab_Work)
+
+---
+
+### STA All Corners — Static Timing Analysis
+
+The STA All Corners work evaluates timing across multiple process, voltage, and temperature (PVT) operating corners. It organizes setup and hold results so timing behavior can be compared between corners.
+
+**Key areas:**
+- Multi-corner static timing analysis
+- PVT corner evaluation
+- Setup WNS and TNS
+- Hold WNS and TNS
+- Unconstrained-path reports
+- Per-corner timing reports and logs
+- CSV summary of corner results
+- Graphs for setup and hold metrics
+- Tcl scripts used in the STA flow
+
+**Reported summary:**
+- **Corners evaluated:** 16
+- **Corners with negative setup WNS:** 6
+- **Corners with negative hold WNS:** 0
+- **Worst setup WNS:** −30.7252 ns at `ss_n40C_1v28`
+- **Best setup WNS:** +8.0138 ns at `ff_100C_1v95`
+- **Worst hold WNS:** +0.1916 ns at `ff_n40C_1v95`
+
+A negative setup WNS indicates a setup-timing violation at that corner. All reported hold WNS values are positive in this result set.
+
+**STA All Corners Structure:**
+
+```text
+STA_All_Corners/
+├── README.md
+├── STA_All_Corners_Report.pdf
+├── corner_summary.csv
+├── corners/
+│   └── <corner_name>/
+│       ├── setup.rpt
+│       ├── hold.rpt
+│       ├── unconstrained.rpt
+│       ├── run_sta.tcl
+│       └── sta_full.log
+├── graphs/
+│   ├── setup_wns.png
+│   ├── setup_tns.png
+│   ├── hold_wns.png
+│   └── hold_tns.png
+└── logs/
+    ├── sta_run.log
+    └── vsdbabysoc_all_corners_fixed.tcl
+```
+
+[Open STA All Corners Work →](./STA_All_Corners)
 
 ---
 
