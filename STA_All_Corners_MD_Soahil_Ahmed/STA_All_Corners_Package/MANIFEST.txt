@@ -1,0 +1,37 @@
+STA All-Corners package manifest
+Author: MD Soahil Ahmed
+
+Files included at package creation:
+README.md
+STA_All_Corners_Report.pdf
+corners/README.md
+corners/ff_100C_1v65/corner_review.md
+corners/ff_100C_1v95/corner_review.md
+corners/ff_n40C_1v56/corner_review.md
+corners/ff_n40C_1v65/corner_review.md
+corners/ff_n40C_1v76/corner_review.md
+corners/ff_n40C_1v95/corner_review.md
+corners/ss_100C_1v40/corner_review.md
+corners/ss_100C_1v60/corner_review.md
+corners/ss_n40C_1v28/corner_review.md
+corners/ss_n40C_1v35/corner_review.md
+corners/ss_n40C_1v40/corner_review.md
+corners/ss_n40C_1v44/corner_review.md
+corners/ss_n40C_1v60/corner_review.md
+corners/ss_n40C_1v76/corner_review.md
+corners/tt_025C_1v80/corner_review.md
+corners/tt_100C_1v80/corner_review.md
+graphs/README.md
+graphs/hold_tns.png
+graphs/hold_wns.png
+graphs/setup_tns.png
+graphs/setup_wns.png
+logs/README.md
+reports/01_Method_and_Flow.md
+reports/02_All_Corner_Results.md
+reports/03_Setup_Timing_Review.md
+reports/04_Hold_Timing_Review.md
+reports/05_Findings_and_Limitations.md
+reports/corner_summary.csv
+
+Note: original raw OpenSTA reports/logs/Tcl, original source PDF and original graph assets were not present in the local workspace; see README.md for scope.
