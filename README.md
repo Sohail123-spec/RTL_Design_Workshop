@@ -19,6 +19,7 @@ This repository documents the practical work completed across five modules. Each
 | [Physical Design](./PD) | Open-Source EDA, OpenLane, SKY130 PDK, Floorplanning, Library Cells, and Timing Characterization | ✅ Completed |
 | [PD Lab Work](./PD_Lab_Work) | Physical-design lab exercises, floorplanning, standard-cell placement, and layout review | ✅ Completed |
 | [STA All Corners](./STA_All_Corners) | Multi-corner static timing analysis, setup/hold WNS and TNS, timing reports, and result visualization | ✅ Completed |
+| [Water Pump Dry-Run Controller](./Water_Pump_Dry_Run_Controller) | Verilog RTL project for a water-pump dry-run protection controller | ✅ Added |
 
 ---
 
@@ -28,6 +29,12 @@ This repository documents the practical work completed across five modules. Each
 RTL_Design_Workshop/
 │
 ├── README.md
+│
+├── Water_Pump_Dry_Run_Controller/
+│   ├── Water_Pump_Dry_Run_Controller/
+│   │   └── README.md
+│   └── flow/
+│       └── ...
 │
 ├── Module 1/
 │   ├── README.md
@@ -428,6 +435,21 @@ STA_All_Corners/
 ```
 
 [Open STA All Corners Work →](./STA_All_Corners)
+
+---
+
+### Water Pump Dry-Run Controller — Verilog RTL Project
+
+This project adds an application-focused RTL design to the workshop repository: a **water-pump dry-run controller** intended to support protection against pump operation without an adequate water supply. The project files and any included flow material are available in the dedicated project directory.
+
+**Project highlights:**
+- Verilog RTL implementation for the water-pump controller
+- A practical digital-design application alongside the workshop exercises
+- Project documentation and supporting implementation/flow files, where included
+
+**Project directory:** [Open Water Pump Dry-Run Controller →](./Water_Pump_Dry_Run_Controller)
+
+**Project README:** [Read the project documentation →](./Water_Pump_Dry_Run_Controller/Water_Pump_Dry_Run_Controller/README.md)
 
 ---
 
