@@ -1,0 +1,67 @@
+[2026-10-21 12:51:29.887] [miter_logger] [info] MiterStrategy::run starting
+[2026-10-21 12:51:29.887] [miter_logger] [info] Collecting POs for design 0: pump_protection_controller
+
+[2026-10-21 12:51:29.892] [miter_logger] [info] Collected 13 PIs for design 0
+
+[2026-10-21 12:51:29.893] [miter_logger] [info] Collected 20 POs for design 0
+
+[2026-10-21 12:51:29.893] [miter_logger] [info] design 0 PI summary by model/term (13 total terminals, 5 unique rows):
+| Model                      | Term          | Count |
+|----------------------------|---------------|-------|
+| sky130_fd_sc_hd__dfxtp_1   | Q             |     9 |
+| pump_protection_controller | clk           |     1 |
+| pump_protection_controller | dry_run_fault |     1 |
+| pump_protection_controller | pump_demand   |     1 |
+| pump_protection_controller | reset         |     1 |
+
+[2026-10-21 12:51:29.893] [miter_logger] [info] design 0 PO summary by model/term (20 total terminals, 4 unique rows):
+| Model                      | Term         | Count |
+|----------------------------|--------------|-------|
+| sky130_fd_sc_hd__dfxtp_1   | CLK          |     9 |
+| sky130_fd_sc_hd__dfxtp_1   | D            |     9 |
+| pump_protection_controller | fault_status |     1 |
+| pump_protection_controller | pump_enable  |     1 |
+
+[2026-10-21 12:51:29.893] [miter_logger] [info] Collecting POs for design 1: pump_protection_controller
+
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of common inputs: 13
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of diff0 inputs: 0
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of diff1 inputs: 0
+[2026-10-21 12:51:29.894] [miter_logger] [info] Collected 13 PIs for design 1
+
+[2026-10-21 12:51:29.894] [miter_logger] [info] Collected 20 POs for design 1
+
+[2026-10-21 12:51:29.894] [miter_logger] [info] design 1 PI summary by model/term (13 total terminals, 5 unique rows):
+| Model                      | Term          | Count |
+|----------------------------|---------------|-------|
+| sky130_fd_sc_hd__dfxtp_1   | Q             |     9 |
+| pump_protection_controller | clk           |     1 |
+| pump_protection_controller | dry_run_fault |     1 |
+| pump_protection_controller | pump_demand   |     1 |
+| pump_protection_controller | reset         |     1 |
+
+[2026-10-21 12:51:29.894] [miter_logger] [info] design 1 PO summary by model/term (20 total terminals, 4 unique rows):
+| Model                      | Term         | Count |
+|----------------------------|--------------|-------|
+| sky130_fd_sc_hd__dfxtp_1   | CLK          |     9 |
+| sky130_fd_sc_hd__dfxtp_1   | D            |     9 |
+| pump_protection_controller | fault_status |     1 |
+| pump_protection_controller | pump_enable  |     1 |
+
+[2026-10-21 12:51:29.894] [miter_logger] [info] normalizeInputs: starting
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of common inputs: 13
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of diff0 inputs: 0
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of diff1 inputs: 0
+[2026-10-21 12:51:29.894] [miter_logger] [info] normalizeOutputs: starting
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of common outputs: 20
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of diff0 outputs: 0
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of diff1 outputs: 0
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of PIs in circuit 0: 13
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of PIs in circuit 1: 13
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of POs in circuit 0: 20
+[2026-10-21 12:51:29.894] [miter_logger] [info] size of POs in circuit 1: 20
+[2026-10-21 12:51:29.898] [miter_logger] [info] Building miter expression
+[2026-10-21 12:51:29.898] [miter_logger] [info] Finished building miter expression
+[2026-10-21 12:51:29.898] [miter_logger] [info] Starting solver
+[2026-10-21 12:51:29.898] [miter_logger] [info] SAT solver finished: UNSAT
+[2026-10-21 12:51:29.898] [miter_logger] [info] Circuits are IDENTICAL

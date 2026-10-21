@@ -1,0 +1,14 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI -Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_db ./results/sky130hd/pump_protection_controller/base/5_route.odb
+read_sdc ./results/sky130hd/pump_protection_controller/base/5_route.sdc
+source /OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+exec cp ./results/sky130hd/pump_protection_controller/base/5_route.odb ./results/sky130hd/pump_protection_controller/base/6_1_fill.odb
+Elapsed time: 0:00.58[h:]min:sec. CPU time: user 0.45 sys 0.08 (91%). Peak memory: 102016KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+6_1_fill               .odb          0        1     0.91       99 bca3845ea5

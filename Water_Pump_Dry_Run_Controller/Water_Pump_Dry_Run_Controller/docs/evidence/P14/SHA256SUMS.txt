@@ -1,0 +1,14 @@
+# Artifact SHA-256 manifest
+
+Generated from the supplied project audit archive on 2026-10-21.
+Paths are relative to the OpenROAD-flow-scripts repository root.
+These hashes identify the included snapshot; they do not independently prove signoff.
+
+eb1d9f721bc8cf50cd5a0819ef2cce22ce7ffd47b669fac0cd353d7e149970ce  flow/results/sky130hd/pump_protection_controller/base/6_final.gds
+eb1d9f721bc8cf50cd5a0819ef2cce22ce7ffd47b669fac0cd353d7e149970ce  flow/results/sky130hd/pump_protection_controller/base/6_1_merged.gds
+968501b2f5d765c928c3f7bc2abaa762d8e4e56dc994136b0c9950ac2984458b  flow/reports/sky130hd/pump_protection_controller/base/6_finish.rpt
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  flow/reports/sky130hd/pump_protection_controller/base/6_drc_count.rpt
+f00dadfd02ea0747112186f4931a99c630d9b82df6f3c34883194478fed1e1a6  flow/logs/sky130hd/pump_protection_controller/base/6_lvs.log
+b3a8098176de5f18be42c5d502954ea06b85c13b1594bf53445f955c5c4e3d47  flow/reports/sky130hd/pump_protection_controller/base/synth_stat.txt
+8d2345d437dab1cfd924b61b3e96d270531f7776fd1f6f459781dde516c23e0d  flow/reports/sky130hd/pump_protection_controller/base/synth_check.txt
+24ea969b1ff29ec29893ac8e7a44c755a40b23a6730412db4b0681b2049cad61  Water_Pump_Dry_Run_Controller/rtl/pump_protection_controller.v

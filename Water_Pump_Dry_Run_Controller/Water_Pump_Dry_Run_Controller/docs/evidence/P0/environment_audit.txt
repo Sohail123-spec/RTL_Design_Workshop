@@ -1,0 +1,37 @@
+Digital Water Pump Controller - Environment Audit
+2026-10-20T07:44:04+00:00
+
+===== OPERATING SYSTEM =====
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+x86_64
+
+===== RESOURCES =====
+               total        used        free      shared  buff/cache   available
+Mem:           7.8Gi       1.7Gi       167Mi        71Mi       5.9Gi       5.6Gi
+Swap:             0B          0B          0B
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop4       32G  1.5G   29G   5% /workspaces
+
+===== RTL AND PHYSICAL-DESIGN TOOLS =====
+git          /usr/bin/git
+make         /usr/bin/make
+python3      /usr/bin/python3
+iverilog     /usr/bin/iverilog
+vvp          /usr/bin/vvp
+gtkwave      /usr/bin/gtkwave
+yosys        /usr/bin/yosys
+klayout      /usr/bin/klayout
+openroad     MISSING
+sta          MISSING
+magic        MISSING
+netgen       MISSING
+
+git version 2.34.1
+GNU Make 4.3
+Python 3.10.12
+Icarus Verilog version 11.0 (stable) ()
+
+Yosys 0.9 (git sha1 1979e0b)
+KLayout 0.26.2

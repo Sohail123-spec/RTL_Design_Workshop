@@ -1,0 +1,37 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI -Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_db ./results/sky130hd/pump_protection_controller/base/3_3_place_gp.odb
+read_sdc ./results/sky130hd/pump_protection_controller/base/2_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+estimate_parasitics -placement
+Perform buffer insertion and gate resizing...
+repair_design -verbose -match_cell_footprint
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |        59
+       10 |     +0.0% |       0 |       0 |             0 |        49
+       20 |     +0.0% |       0 |       0 |             0 |        39
+       30 |     +0.0% |       0 |       0 |             0 |        29
+       40 |     +0.0% |       0 |       0 |             0 |        19
+       50 |     +0.0% |       0 |       0 |             0 |         9
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0504] Runtime: 0.02s
+Floating nets: 
+Report metrics stage 3, resizer...
+
+==========================================================================
+resizer report_design_area
+--------------------------------------------------------------------------
+Design area 508 um^2 38% utilization.
+Instance count before 68, after 68
+Pin count before 193, after 193
+write_db ./results/sky130hd/pump_protection_controller/base/3_4_place_resized.odb
+Elapsed time: 0:01.39[h:]min:sec. CPU time: user 1.01 sys 0.18 (85%). Peak memory: 223636KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+3_4_place_resized      .odb          1        1     0.86      218 6b5cb9c94a

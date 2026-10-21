@@ -1,0 +1,30 @@
+Digital Water Pump Controller - Follow-up Environment Audit
+Date: 2026-10-21
+Purpose: Record direct executable checks performed after the historical P0 audit.
+Historical evidence: docs/evidence/P0/environment_audit.txt
+The historical P0 audit is preserved unchanged.
+
+===== DIRECT TOOL VERSION CHECKS =====
+Yosys: 0.9 (git sha1 1979e0b)
+Icarus Verilog: 11.0 (stable)
+OpenROAD: 26Q2-1164-g08f67ee5ec
+OpenSTA: 3.1.0
+KLayout: 0.30.12
+
+===== INTERPRETATION =====
+OpenROAD and OpenSTA were recorded as missing in the historical
+2026-10-20 audit but were available during the direct checks on
+2026-10-21. KLayout was upgraded from the historically recorded
+0.26.2 to 0.30.12.
+
+Earlier claims of Yosys 0.70+176 and Icarus Verilog 14.0-devel
+were not reproduced by the direct executable checks and remain
+unverified.
+
+The reference GCD flow validates tool availability and reference-flow
+operation only. It does not validate the Water Pump Controller RTL.
+The reference GCD timing results included setup violations; timing
+must not be reported as passing.
+
+No Water Pump Controller RTL was written or verified as part of
+this environment audit.

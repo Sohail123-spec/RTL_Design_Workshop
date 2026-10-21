@@ -1,0 +1,58 @@
+# Project Progress
+
+**Current status:** Proposal submitted; P1 decisions accepted; documentation consistency validation pending.  
+**Last updated:** 2026-10-21
+
+| Checkpoint | Status | Notes |
+|---|---|---|
+| P0 — Proposal and scope | IN PROGRESS | Project selected and Google Form submitted (user-reported). |
+| P1 — Architecture freeze | IN PROGRESS | Q-001 through Q-010 accepted; validate cross-document consistency before PASS. |
+| P2 — RTL implementation | NOT STARTED | No new-project RTL approved or tested. |
+| P3 — Compile/lint | NOT STARTED | Requires RTL. |
+| P4 — Self-checking simulation | NOT STARTED | Requires RTL/testbench. |
+| P5 — Safety regression | NOT STARTED | Requires passing simulation. |
+| P6 — Synthesis baseline | NOT STARTED | Requires verified RTL/platform. |
+| P7 — Flow preparation | NOT STARTED | Actual platform/constraints must be identified. |
+| P8 — Floorplan | NOT STARTED | Blocked on earlier checkpoints. |
+| P9 — Placement | NOT STARTED | Blocked on earlier checkpoints. |
+| P10 — CTS | NOT STARTED | If required by flow. |
+| P11 — STA | NOT STARTED | Blocked on implementation. |
+| P12 — Routing | NOT STARTED | Blocked on implementation. |
+| P13 — DRC/LVS | NOT STARTED | Depends on flow support. |
+| P14 — GDS | NOT STARTED | No GDS generated for this project. |
+| P15 — Final report/demo | NOT STARTED | Depends on results. |
+
+## Completed
+- Reviewed trainer checklist screenshots.
+- Selected processor-free digital pump-protection concept.
+- Chose external active-high digital `dry_run_fault`.
+- Prepared proposal text; user reported submitting it.
+
+## Blockers
+- Validate consistency across `PROJECT_SPEC.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `RTL_PLAN.md`, and `VERIFICATION_PLAN.md`.
+- Verify `docs/evidence/P0/environment_audit.txt` against the latest environment audit.
+- Confirm the selected PDK/platform and physical-flow constraints before physical-design checkpoints.
+- Do not begin RTL until documentation validation is complete and the user approves proceeding.
+
+## Update protocol
+After every meaningful checkpoint, append date, changed files, commands/tests, actual result, evidence path, status (PASS/FAIL/BLOCKED/IN PROGRESS), open issues, and next action. Never mark PASS without evidence.
+
+### 2026-10-20 — Codespace documentation and environment audit (corrected 2026-10-21)
+- Project documentation is in `Water_Pump_Dry_Run_Controller/docs/`; no pump-controller RTL has been written or verified.
+- Direct executable checks on 2026-10-21 confirmed Yosys `0.9 (git sha1 1979e0b)`, Icarus Verilog `11.0 (stable)`, OpenROAD `26Q2-1164-g08f67ee5ec`, OpenSTA `3.1.0`, and KLayout `0.30.12`. Earlier Yosys/Icarus version claims remain unverified.
+- ORFS checkout: `tools/OpenROAD-flow-scripts`, commit `bf3f9b344`, branch `master`. Existing modified/untracked ORFS paths were observed and must not be reset, cleaned, deleted, or recloned.
+- Reference GCD flow produced non-empty final GDS/ODB/Verilog/DEF/SDC outputs. GCD DRC count reports 0 and LVS log reports matching netlists. These are reference-flow evidence only, not pump-controller results.
+- GCD physical flow required existing compatibility workarounds; generic GCD timing had setup violations (WNS about -1.712 ns and 68 violating endpoints), so timing was not a pass.
+- Evidence path reported: `docs/evidence/P0/environment_audit.txt`. Verify its contents if it is used in a final submission.
+- Status: environment tools are present and reference-flow outputs exist; P0 evidence/documentation review still requires final validation. Do not claim pump-controller implementation, timing, DRC, LVS, or GDS results.
+
+### 2026-10-21 — P1 architecture decisions accepted; documentation update
+- User explicitly accepted Q-001 through Q-010, including Option A for demand absent at lockout expiry (remain disabled, retain fault status, start another full lockout interval, then recheck).
+- Files updated by the documentation-update script: `PROJECT_SPEC.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `RTL_PLAN.md`, `VERIFICATION_PLAN.md`, `PROGRESS.md`, and `MEMORY.md`.
+- Backup copies created under `docs/evidence/P1/pre_update_backup/` before edits.
+- Commands/tests: documentation update script only; no Verilog, simulation, synthesis, timing, or physical-design commands run for this checkpoint.
+- Actual result: agreed P1 behavior recorded in the docs; consistency check remains pending until the updated files are inspected.
+- Evidence path: `docs/evidence/P1/pre_update_backup/` and this progress entry.
+- Status: IN PROGRESS (documentation validation pending; do not mark P1 PASS yet).
+- Open issues: confirm exact text, headings, and cross-document consistency; verify the environment evidence file against the latest audit output.
+- Next action: inspect changed sections and check no stale open-question wording remains; only after validation may P1 be marked PASS. RTL remains prohibited until user approval of the validated documents.
