@@ -33,3 +33,35 @@ The controller does not measure water flow or implement physical sensors. An ext
 
 ## Checkpoint rule
 A plan, compile, or source file alone is not a PASS. Checkpoint status must be supported by the included logs/reports/evidence and the limitations recorded in `docs/PROGRESS.md`.
+
+
+## Evidence and checkpoint guide
+
+**Visual evidence:** Each checkpoint README embeds its available screenshots directly using relative Markdown image links. The image files are also retained separately in their checkpoint folders.
+
+The checkpoint evidence is organized under [`docs/evidence/`](./docs/evidence/). Each checkpoint folder contains a README explaining the purpose of the evidence, the files captured, how to interpret the results, and the limits of what the evidence demonstrates.
+
+| Checkpoint | Evidence focus | Folder |
+|---|---|---|
+| P0 | Proposal/environment baseline (historical baseline only) | [P0](./docs/evidence/P0/) |
+| P1 | Frozen specification and architecture decisions | [P1](./docs/evidence/P1/) |
+| P2 | RTL implementation | [P2](./docs/evidence/P2/) |
+| P3 | Initial compile/test screenshot | [P3](./docs/evidence/P3/) |
+| P4 | Simulation waveforms and VCD data | [P4](./docs/evidence/P4/) |
+| P5 | Reset, lockout-boundary, persistent-fault, and invalid-parameter checks | [P5](./docs/evidence/P5/) |
+| P6 | Synthesis status, statistics, checks, and netlist files | [P6](./docs/evidence/P6/) |
+| P7 | Flow setup and floorplanning | [P7](./docs/evidence/P7/) |
+| P8 | Standard-cell placement | [P8](./docs/evidence/P8/) |
+| P9 | Clock-tree synthesis (CTS) | [P9](./docs/evidence/P9/) |
+| P10 | Global routing | [P10](./docs/evidence/P10/) |
+| P11 | Final timing, DRC count, violation checks, and routed layout | [P11](./docs/evidence/P11/) |
+| P12 | GDSII output and 2D/3D visual inspection | [P12](./docs/evidence/P12/) |
+| P13 | LVS netlist comparison | [P13](./docs/evidence/P13/) |
+| P14 | Final artifact inventory and SHA-256 manifest | [P14](./docs/evidence/P14/) |
+| P15 | Final report and demonstration handoff | [P15](./docs/evidence/P15/) |
+
+**Evidence discipline:** Screenshots, reports, and archived logs are evidence of the specific captured run. They should not be described as fresh reruns, and zero reported DRC or matching LVS netlists do not constitute foundry signoff.
+
+See [`docs/EVIDENCE_PLAN.md`](./docs/EVIDENCE_PLAN.md), [`docs/PROGRESS.md`](./docs/PROGRESS.md), and [`docs/FINAL_REPORT.md`](./docs/FINAL_REPORT.md) for the inventory, current checkpoint status, and overall results/limitations.
+
+---
