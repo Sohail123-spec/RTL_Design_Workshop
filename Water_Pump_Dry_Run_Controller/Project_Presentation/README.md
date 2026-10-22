@@ -8,7 +8,7 @@ This presentation demonstrates the design and implementation of a digital Water 
 
 Watch my complete project walkthrough:
 
-▶️ **[Watch the Water Pump Dry-Run Protection Controller Presentation](https://drive.google.com/file/d/1GLLMMpnD6hn0L013cMqMMpV4OjTZ-q9t/view?usp=drivesdk)**
+▶️ **[Watch the Water Pump Dry-Run Protection Controller Presentation](https://drive.google.com/file/d/1PRzm23A_z5vnBa4ayrhpNX1xiEJsoAxJ/view?usp=sharing)**
 
 The video explains the project objectives, controller architecture, important RTL files, verification approach, physical-design results, and supporting evidence.
 
