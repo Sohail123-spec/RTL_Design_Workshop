@@ -98,12 +98,13 @@ module pump_protection_controller_reset_tb;
         tick;
         check(1, 0, "Recovery after complete fresh interval");
 
-        if (errors == 0)
+        if (errors == 0) begin
             $display("ALL RESET TESTS PASSED");
-        else
+            $finish;
+        end else begin
             $display("RESET TESTS FAILED: %0d error(s)", errors);
-
-        $finish;
+            $fatal(1, "Reset testbench failed with %0d error(s)", errors);
+        end
     end
 
 endmodule

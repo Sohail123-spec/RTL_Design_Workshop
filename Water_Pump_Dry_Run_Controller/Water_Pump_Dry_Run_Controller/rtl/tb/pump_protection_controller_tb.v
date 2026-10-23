@@ -150,12 +150,13 @@ module pump_protection_controller_tb;
         tick;
         check_outputs(0, 1, "Fault present after reset release");
 
-        if (errors == 0)
+        if (errors == 0) begin
             $display("ALL TESTS PASSED");
-        else
+            $finish;
+        end else begin
             $display("TESTS FAILED: %0d error(s)", errors);
-
-        $finish;
+            $fatal(1, "Main testbench failed with %0d error(s)", errors);
+        end
     end
 
 endmodule

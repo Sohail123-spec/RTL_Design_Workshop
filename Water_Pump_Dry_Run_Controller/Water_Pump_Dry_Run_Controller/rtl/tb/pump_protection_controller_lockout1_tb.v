@@ -77,12 +77,13 @@ module pump_protection_controller_lockout1_tb;
         tick;
         check(1, 0, "Recovery at next one-cycle recheck");
 
-        if (errors == 0)
+        if (errors == 0) begin
             $display("ALL LOCKOUT-1 TESTS PASSED");
-        else
+            $finish;
+        end else begin
             $display("LOCKOUT-1 TESTS FAILED: %0d error(s)", errors);
-
-        $finish;
+            $fatal(1, "Lockout-1 testbench failed with %0d error(s)", errors);
+        end
     end
 
 endmodule

@@ -86,12 +86,13 @@ module pump_protection_controller_persistent_fault_tb;
         tick;
         check(1, 0, "Restart only at second interval expiry");
 
-        if (errors == 0)
+        if (errors == 0) begin
             $display("ALL PERSISTENT-FAULT TESTS PASSED");
-        else
+            $finish;
+        end else begin
             $display("PERSISTENT-FAULT TESTS FAILED: %0d error(s)", errors);
-
-        $finish;
+            $fatal(1, "Persistent-fault testbench failed with %0d error(s)", errors);
+        end
     end
 
 endmodule
