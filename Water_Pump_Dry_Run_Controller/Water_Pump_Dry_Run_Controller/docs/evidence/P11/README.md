@@ -9,26 +9,6 @@ P11 gathers the final timing summary, violation checks, DRC count, and routed-la
 - [`pump_controller_final_violation_checks.png`](./pump_controller_final_violation_checks.png) — final violation-check output.
 - [`pump_controller_final_routed_layout.png`](./pump_controller_final_routed_layout.png) — routed-layout view.
 
-## Evidence gallery
-
-The images below render directly in this README on GitHub. The original image files remain in this folder for separate viewing or download.
-
-### pump controller final drc count
-
-![pump controller final drc count](./pump_controller_final_drc_count.png)
-
-### pump controller final routed layout
-
-![pump controller final routed layout](./pump_controller_final_routed_layout.png)
-
-### pump controller final timing summary
-
-![pump controller final timing summary](./pump_controller_final_timing_summary.png)
-
-### pump controller final violation checks
-
-![pump controller final violation checks](./pump_controller_final_violation_checks.png)
-
 ## Recorded result
 The included project report records final TNS/WNS of **0.00**, worst slack of **+14.80 ns**, and a DRC count report value of **0** for the checks represented by this run.
 

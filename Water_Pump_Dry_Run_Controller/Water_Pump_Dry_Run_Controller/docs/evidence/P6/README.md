@@ -19,26 +19,6 @@ The project progress notes report:
 
 These figures describe the included synthesis run and its library/configuration; they are not technology-independent physical dimensions.
 
-## Evidence gallery
-
-The images below render directly in this README on GitHub. The original image files remain in this folder for separate viewing or download.
-
-### pump controller netlist files
-
-![pump controller netlist files](./pump_controller_netlist_files.png)
-
-### pump controller synthesis check
-
-![pump controller synthesis check](./pump_controller_synthesis_check.png)
-
-### pump controller synthesis pass
-
-![pump controller synthesis pass](./pump_controller_synthesis_pass.png)
-
-### pump controller synthesis statistics
-
-![pump controller synthesis statistics](./pump_controller_synthesis_statistics.png)
-
 ## Review checklist
 - [ ] Check the synthesis completion screenshot.
 - [ ] Review cell counts and area in the statistics screenshot/report.

@@ -5,7 +5,7 @@
 - One clock domain, active-high synchronous reset.
 - No generated clocks, simulation delays, or testbench constructs in RTL.
 - Avoid inferred latches.
-- Do not write RTL until P1 decisions are resolved.
+- Historical gate (superseded): RTL was originally deferred until P1 decisions were resolved. P1 was accepted on 2026-10-21 and the RTL implementation now exists; preserve the frozen behavior and use the checkpoints below for any authorized changes.
 
 ## Proposed tree
 ```text
@@ -53,7 +53,7 @@ Frozen implementation requirements:
 - Reject/document `LOCKOUT_CYCLES < 1`; test `LOCKOUT_CYCLES=1` exactly.
 - No generated clocks, delays, analog logic, motor driver, or physical-sensor claims.
 
-After documentation validation, the next authorized step is P1 closeout only. RTL starts only after the user confirms the documents are consistent.
+Historical status (superseded): this instruction applied before P1 closeout and RTL implementation. The P1 freeze was accepted on 2026-10-21 and the RTL implementation now exists. Do not treat the existing RTL as unauthorized or unstarted; any future changes require explicit authorization and regression of affected checkpoints.
 
 ## Accepted parameter validation policy
 

@@ -8,22 +8,6 @@ P10 captures global-routing results, including timing-path and routing-violation
 - [`pump_controller_global_route_timing_path.png`](./pump_controller_global_route_timing_path.png) — representative global-route timing path.
 - [`pump_controller_global_route_violations.png`](./pump_controller_global_route_violations.png) — global-route violation view.
 
-## Evidence gallery
-
-The images below render directly in this README on GitHub. The original image files remain in this folder for separate viewing or download.
-
-### pump controller global route report
-
-![pump controller global route report](./pump_controller_global_route_report.png)
-
-### pump controller global route timing path
-
-![pump controller global route timing path](./pump_controller_global_route_timing_path.png)
-
-### pump controller global route violations
-
-![pump controller global route violations](./pump_controller_global_route_violations.png)
-
 ## Recorded result
 The project progress notes report TNS/WNS of 0 and worst slack of **+14.80 ns** for the archived global-route result.
 

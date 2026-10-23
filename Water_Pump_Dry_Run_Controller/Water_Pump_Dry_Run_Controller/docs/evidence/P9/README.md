@@ -9,22 +9,6 @@ P9 records clock-tree synthesis (CTS) outputs and timing evidence after clock-tr
 - [`pump_controller_cts_database.png`](./pump_controller_cts_database.png) — CTS database/layout view.
 - [`cts_report_output.txt`](./cts_report_output.txt) — captured CTS report output.
 
-## Evidence gallery
-
-The images below render directly in this README on GitHub. The original image files remain in this folder for separate viewing or download.
-
-### pump controller cts database
-
-![pump controller cts database](./pump_controller_cts_database.png)
-
-### pump controller cts timing path
-
-![pump controller cts timing path](./pump_controller_cts_timing_path.png)
-
-### pump controller cts timing report
-
-![pump controller cts timing report](./pump_controller_cts_timing_report.png)
-
 ## Recorded result
 The project progress notes report TNS/WNS of 0 and worst slack of **+14.82 ns** for the archived CTS result.
 

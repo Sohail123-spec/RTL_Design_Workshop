@@ -24,26 +24,6 @@ Open the `.vcd` files in GTKWave, Surfer, or another compatible waveform viewer 
 ## Recorded test summary
 The archived project notes report 18 checks in the main testbench, 9 in reset, 5 in lockout-1, and 9 in persistent-fault testing, with each testbench reporting its pass message. These numbers are transcribed from the existing project record; this README update did not rerun simulation.
 
-## Evidence gallery
-
-The images below render directly in this README on GitHub. The original image files remain in this folder for separate viewing or download.
-
-### pump controller lockout1 waveform
-
-![pump controller lockout1 waveform](./pump_controller_lockout1_waveform.png)
-
-### pump controller main waveform
-
-![pump controller main waveform](./pump_controller_main_waveform.png)
-
-### pump controller persistent fault waveform
-
-![pump controller persistent fault waveform](./pump_controller_persistent_fault_waveform.png)
-
-### pump controller reset waveform
-
-![pump controller reset waveform](./pump_controller_reset_waveform.png)
-
 ## Review checklist
 - [ ] Check signal timing around the active clock edge.
 - [ ] Verify the lockout boundary against the convention in `docs/PROJECT_SPEC.md`.

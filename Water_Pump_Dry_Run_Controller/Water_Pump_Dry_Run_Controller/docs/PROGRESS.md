@@ -21,8 +21,8 @@
 | P11 — Final timing / violation review | PASS for recorded checks | Final timing, violation-check, DRC-count, and routed-layout screenshots in `docs/evidence/P11/`; included final report states WNS/TNS 0 and worst slack +14.80 ns. Review exact constraints and warnings before making signoff claims. |
 | P12 — GDSII output | PASS (file and viewer evidence present) | `flow/results/sky130hd/pump_protection_controller/base/6_final.gds`; file listing and 2D/3D GDS Inspector screenshots in `docs/evidence/P12/`. |
 | P13 — LVS | PASS for included comparison | `flow/logs/sky130hd/pump_protection_controller/base/6_lvs.log` includes “Congratulations! Netlists match.” Screenshot in `docs/evidence/P13/`. |
-| P14 — Additional final handoff evidence | NOT COMPLETE | Only README placeholder is present in `docs/evidence/P14/`; do not describe P14 as a completed independent checkpoint. |
-| P15 — Final report/demo package | NOT COMPLETE | Only README placeholder is present in `docs/evidence/P15/`; documentation and presentation/handoff remain to be completed. |
+| P14 — Additional final handoff evidence | COMPLETE (artifact inventory prepared; independent integrity verification pending) | `docs/evidence/P14/README.md` and `SHA256SUMS.txt` are present. The manifest is a handoff aid; hashes still need to be verified against the exact submission snapshot. This does not claim an independent rerun. |
+| P15 — Final report/demo package | HANDOFF MATERIAL PRESENT; course acceptance may remain pending | `docs/FINAL_REPORT.md`, `docs/evidence/P15/README.md`, and `pump_controller_final_layout_overview.webp` are present. The README provides demo guidance; confirm any course-specific presentation/submission requirements separately. |
 
 ## Physical-design result summary
 
@@ -35,7 +35,7 @@ The included DRC evidence reports zero violations for the run's supported checks
 ## Known limitations / pre-push tasks
 
 - Documentation had not been kept in sync with implementation. This update reconciles the project status with the evidence present in the archive.
-- P14/P15 remain incomplete placeholders.
+- P14/P15 handoff materials are present in this archive; independent SHA-256 verification, any course-specific acceptance, and a fresh independent rerun remain unclaimed.
 - Some results are represented by screenshots rather than a dedicated full command transcript in the project evidence folder.
 - Confirm `.gitignore`, repository status, and secret hygiene before staging/pushing. Do not reset, clean, delete, or reclone the shared ORFS checkout.
 - Do not change RTL or constraints just to remove historical warnings without understanding the impact and rerunning affected stages.
@@ -45,7 +45,7 @@ Append a dated entry after every meaningful checkpoint with changed files, comma
 
 ## 2026-10-21 — Documentation synchronization from audit archive
 - Reviewed the uploaded `Water_Pump_Dry_Run_Controller_audit.zip` inventory and matched current implementation claims to included source, testbench, waveform, screenshot, report, and physical-design artifact paths.
-- Updated `README.md`, `docs/PROGRESS.md`, `docs/MEMORY.md`, `docs/EVIDENCE_PLAN.md`, `docs/PD_PLAN.md`, `docs/VERIFICATION_PLAN.md`, and stale implementation-status text in `docs/PROJECT_SPEC.md`, `docs/DECISIONS.md`, and `docs/RTL_PLAN.md`.
+- Updated documentation status records in `docs/PROGRESS.md`, `docs/MEMORY.md`, `docs/EVIDENCE_PLAN.md`, `docs/PD_PLAN.md`, `docs/VERIFICATION_PLAN.md`, and stale implementation-status text in `docs/PROJECT_SPEC.md`, `docs/DECISIONS.md`, and `docs/RTL_PLAN.md`. README files are preserved unchanged in this targeted cleanup.
 - No RTL, testbench, SDC, platform configuration, generated netlist, or physical-design output was modified by this documentation pass.
 - Results are recorded as evidence-backed snapshot statuses, not a claim that every flow warning is resolved or that foundry signoff is achieved.
 - Next: review the resulting diff, run secret/ignore/status checks, then push the intended project files; finish P14/P15 documentation/demo materials as a separate task.
@@ -58,3 +58,12 @@ Append a dated entry after every meaningful checkpoint with changed files, comma
 - Completed P15 report/demo guidance under `docs/evidence/P15/` and linked the final report.
 - Existing RTL, testbenches, constraints, and generated physical-design outputs were not modified and the flow was not rerun during this documentation pass.
 - **Still pending before GitHub push:** inspect the live Git working tree and `.gitignore`, review the exact staged diff, run a secrets scan on candidate files, and decide which generated artifacts belong in the repository.
+
+
+## 2026-10-24 — Documentation consistency and testbench exit-status cleanup
+- Files changed: `docs/ARCHITECTURE.md`, `docs/RTL_PLAN.md`, `docs/DECISIONS.md`, `docs/PROGRESS.md`, `docs/MEMORY.md`, and the four existing RTL testbenches under `rtl/tb/`.
+- Architecture overview wording was reconciled with the frozen P1 transition contract; the historical RTL gate and P14/P15 status notes were clarified without deleting prior history.
+- Testbench end-of-test logic now calls `$fatal(1, ...)` if accumulated check errors are nonzero and calls `$finish` only on success. Stimulus and expected checks were preserved.
+- Validation: static source inspection only in this packaging environment; Icarus Verilog was not available on PATH, so no testbench was rerun here.
+- Physical-design configuration `rtl/openroad/sky130hd/config.mk` was left unchanged because its absolute `/OpenROAD-flow-scripts/Water_Pump_Dry_Run_Controller/...` paths may be correct in the intended ORFS workspace, which is not present at that absolute location in this archive-extraction environment.
+- Remaining: validate those configured paths in the user's actual ORFS workspace, run all four testbenches, verify the P14 SHA-256 manifest, and complete Git pre-push hygiene checks.

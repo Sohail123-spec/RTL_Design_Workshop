@@ -10,26 +10,6 @@ P7 records the flow configuration/dry-run and the floorplanning stage for the Sk
 - [`pump_controller_floorplan_database.png`](./pump_controller_floorplan_database.png) — floorplan database/layout view.
 - [`floorplan_report_output.txt`](./floorplan_report_output.txt) — captured floorplan report output.
 
-## Evidence gallery
-
-The images below render directly in this README on GitHub. The original image files remain in this folder for separate viewing or download.
-
-### pump controller floorplan database
-
-![pump controller floorplan database](./pump_controller_floorplan_database.png)
-
-### pump controller floorplan timing path
-
-![pump controller floorplan timing path](./pump_controller_floorplan_timing_path.png)
-
-### pump controller floorplan timing report
-
-![pump controller floorplan timing report](./pump_controller_floorplan_timing_report.png)
-
-### pump controller orfs dry run
-
-![pump controller orfs dry run](./pump_controller_orfs_dry_run.png)
-
 ## Recorded result
 The progress record reports floorplan TNS/WNS of 0 and worst slack of **+15.26 ns** for the archived configuration.
 

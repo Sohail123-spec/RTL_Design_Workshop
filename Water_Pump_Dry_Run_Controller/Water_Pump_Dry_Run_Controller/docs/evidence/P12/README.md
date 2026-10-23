@@ -12,22 +12,6 @@ P12 documents the final GDSII output and the available visual inspection of the 
 ## What this demonstrates
 The archive includes a generated GDSII artifact and screenshots documenting its presence and visual inspection in a GDS viewer.
 
-## Evidence gallery
-
-The images below render directly in this README on GitHub. The original image files remain in this folder for separate viewing or download.
-
-### pump controller final gds file
-
-![pump controller final gds file](./pump_controller_final_gds_file.png)
-
-### pump controller gdsii 3d layout view
-
-![pump controller gdsii 3d layout view](./pump_controller_gdsii_3d_layout_view.png)
-
-### pump controller gdsii layout view
-
-![pump controller gdsii layout view](./pump_controller_gdsii_layout_view.png)
-
 ## Review checklist
 - [ ] Confirm the final GDS file exists at the path above.
 - [ ] Open the 2D view to inspect the layout geometry.

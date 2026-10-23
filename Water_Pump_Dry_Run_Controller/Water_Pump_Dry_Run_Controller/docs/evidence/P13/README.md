@@ -7,14 +7,6 @@ P13 records the result of the LVS comparison performed by the archived physical-
 - [`pump_controller_lvs_netlists_match.png`](./pump_controller_lvs_netlists_match.png) — screenshot of the LVS log/result.
 - Log source: `flow/logs/sky130hd/pump_protection_controller/base/6_lvs.log`.
 
-## Evidence gallery
-
-The images below render directly in this README on GitHub. The original image files remain in this folder for separate viewing or download.
-
-### pump controller lvs netlists match
-
-![pump controller lvs netlists match](./pump_controller_lvs_netlists_match.png)
-
 ## Recorded result
 The project notes state that the included LVS log contains the message **“Congratulations! Netlists match.”**
 

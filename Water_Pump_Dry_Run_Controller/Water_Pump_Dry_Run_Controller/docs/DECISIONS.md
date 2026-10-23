@@ -12,7 +12,7 @@
 | D-007 | Self-checking simulation before synthesis/physical design. | Accepted |
 | D-008 | Do not claim area/timing/GDS success without actual results. | Accepted |
 
-## Must resolve before RTL (P1)
+## P1 Questions — Resolution Record
 | ID | Question | Recommended default to review | Status |
 |---|---|---|---|
 | Q-001 | When does lockout start/restart? | Start on entry; if fault persists at recheck, begin a new full interval. | Resolved — see frozen P1 decisions below |

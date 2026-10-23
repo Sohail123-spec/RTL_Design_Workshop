@@ -20,7 +20,7 @@ Parameter: `LOCKOUT_CYCLES >= 1`. E0 is the fault-detection/lockout-entry rising
 ## Functional blocks
 1. **Control FSM:** idle, running, lockout, and recovery/recheck behavior.
 2. **Lockout timer:** synchronous counter with documented load/count/expiry behavior.
-3. **Fault-status register:** records detected fault; exact clear condition must be frozen.
+3. **Fault-status register:** records a detected fault; it is cleared by synchronous reset or after a successful restart at the defined recheck edge. It remains set when the recheck does not permit restarting.
 4. **Output control:** pump enable defaults low in reset, idle, lockout, and fault conditions; it may be high only when running is permitted.
 
 ## Proposed sequence
@@ -29,10 +29,11 @@ Parameter: `LOCKOUT_CYCLES >= 1`. E0 is the fault-detection/lockout-entry rising
 3. If fault is sampled high, disable pump and record fault.
 4. Keep pump disabled during the lockout interval.
 5. At interval expiry, recheck fault and demand.
-6. Restart only if fault is inactive and demand remains asserted; otherwise stay disabled and follow the specified wait/recheck policy.
-7. If demand is absent, do not restart.
+6. At the defined recheck edge, restart only if the sampled fault is inactive and demand remains asserted. A successful restart enters the running state and clears `fault_status`.
+7. If the fault is active or demand is absent at recheck, keep the pump disabled, retain `fault_status`, and begin a fresh full lockout interval.
+8. If demand is absent while idle, remain idle with the pump disabled.
 
-Exact cycle transitions and fault-clear policy remain open until `DECISIONS.md` is resolved.
+The cycle transitions, lockout timing convention, restart eligibility, and fault-status clear behavior are defined by the frozen P1 transition contract below.
 
 ## Clock/reset
 One clock domain; active-high synchronous reset; no generated clocks. Inputs are assumed synchronous for the RTL simulation model. Physical integration must define synchronization if external signals are asynchronous.

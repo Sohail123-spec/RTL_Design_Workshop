@@ -80,6 +80,7 @@ Append a dated entry after every meaningful checkpoint; do not erase earlier ent
 - Evidence path: `docs/evidence/P2/` through `docs/evidence/P13/`; ORFS outputs under `flow/results/sky130hd/pump_protection_controller/base/`, reports under `flow/reports/.../base/`, and logs under `flow/logs/.../base/`.
 - Status: DOCUMENTATION UPDATED; pre-push audit still required.
 - Open issues: P14 and P15 contain README placeholders only; review full warnings/configuration and check `.gitignore`, repository status, and secrets before pushing.
+- Historical-status note: the P14/P15 placeholder statement above was superseded by the later `2026-10-21 — P14/P15 handoff closeout` entry below, which records the SHA-256 manifest, final report, demo guidance, and layout overview. Independent rerun and repository pre-push hygiene remain pending.
 - Next action: run repository hygiene checks, inspect the intended Git diff, then push only the intended project changes. Finish the final report/demo package after the push or as agreed.
 
 

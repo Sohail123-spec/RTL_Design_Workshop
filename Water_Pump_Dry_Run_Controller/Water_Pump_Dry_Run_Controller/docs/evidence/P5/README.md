@@ -9,26 +9,6 @@ P5 groups focused evidence for reset behavior, the one-cycle lockout boundary, p
 - [`pump_controller_persistent_fault_pass.png`](./pump_controller_persistent_fault_pass.png) — persistent-fault test result.
 - [`pump_controller_invalid_parameter.png`](./pump_controller_invalid_parameter.png) — invalid parameter behavior.
 
-## Evidence gallery
-
-The images below render directly in this README on GitHub. The original image files remain in this folder for separate viewing or download.
-
-### pump controller invalid parameter
-
-![pump controller invalid parameter](./pump_controller_invalid_parameter.png)
-
-### pump controller lockout1 pass
-
-![pump controller lockout1 pass](./pump_controller_lockout1_pass.png)
-
-### pump controller persistent fault pass
-
-![pump controller persistent fault pass](./pump_controller_persistent_fault_pass.png)
-
-### pump controller reset pass
-
-![pump controller reset pass](./pump_controller_reset_pass.png)
-
 ## Safety properties being checked
 - Reset leaves the pump disabled.
 - A sampled fault takes priority over a run request.

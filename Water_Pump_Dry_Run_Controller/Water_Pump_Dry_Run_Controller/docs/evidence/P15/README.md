@@ -26,11 +26,3 @@ P15 is the presentation/handoff checkpoint for explaining the controller, demons
 
 ## Completion boundary
 P15 organizes the final report and demonstration material. It should be marked complete only when the required presentation/demo handoff is actually prepared and any course-specific acceptance criteria are met.
-
-## Evidence gallery
-
-The images below render directly in this README on GitHub. The original image files remain in this folder for separate viewing or download.
-
-### pump controller final layout overview
-
-![pump controller final layout overview](./pump_controller_final_layout_overview.webp)
